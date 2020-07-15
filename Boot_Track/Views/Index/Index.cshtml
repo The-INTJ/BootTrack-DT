@@ -4,5 +4,246 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+    <div class="Container">
 
+        <h2 style="text-align: center;">Boot Camp Dashboard</h2>
+        <div class="Filter-Container">
+
+            @*<div class="Head-Search"></div>*@
+
+            <input type="text" class="Search-Bar" placeholder="Filter by Module" /> @* Try to add svg of search icon in placeholder*@
+
+            <div class="Row1">
+                <input type="checkbox" class="Hide-Complete-Modules" />
+                <p>Hide Modules with 100% Completion</p>
+                <input type="checkbox" class="My-Status" />
+                <p>Show Only My Module Status</p>
+            </div>
+            <div class="Row2">
+                <div style="display: inline;">
+                    <input type="checkbox" class="BC-Modules" />
+                    <p>BC Modules Only</p>
+                </div>
+                <input type="checkbox" class="TC-Modules" />
+                <p>TC Modules Only</p>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Module #</th>
+                    <th scope="col">Est. Target<br/>Completion</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Henry</th>
+                    <th scope="col">Drew</th>
+                    <th scope="col">Kam</th>
+                    <th scope="col">Alex</th>
+                    <th scope="col">Rebekah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">#1 - Dev Tools</th>
+                    <td>5/20</td>
+                    <td>Both</td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#2 - HTML &amp; CSS</th>
+                    <td>5/27</td>
+                    <td>Both</td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#3 - Javascript 101</th>
+                    <td>6/02</td>
+                    <td>Both</td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#4 - C# 101</th>
+                    <td>6/02</td>
+                    <td>TC</td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#5 - SQL 101</th>
+                    <td>6/02</td>
+                    <td>TC</td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="progress">
+                            <option value=""></option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
