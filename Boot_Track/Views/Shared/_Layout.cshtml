@@ -8,28 +8,19 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <ul class="nav nav-fill navbar-expand-lg navbar-light bg-light fixed-top" style="list-style: none; padding-top:30px; padding-bottom:30px;">
+        <li class="nav-item">
             <img class="logo" src="~/Images/Grey-Logo.PNG" alt="Logo" />
-                <a class="navbar-brand" href="#top">BOOT<br />TRACK</a>
-            @* I think the toggler tracks the current page & bolds it in navbar *@
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container body-content">
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" style="font-size: 24px"><strong>BOOT TRACK</strong></a>
+        </li>
+        <li class="nav-item">
+            <img class="avatar" src="~/Images/Grey-Circle.PNG" alt="Avatar" />
+        </li>
+        
+    </ul>
+    <div @*class="container body-content"*@>
         @RenderBody()
         <hr />
         <footer>

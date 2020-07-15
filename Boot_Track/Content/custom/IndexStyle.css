@@ -1,2 +1,37 @@
 ﻿body {
 }
+
+h2 {
+    text-align: center;
+    color: #0c87e1;
+}
+
+.Container {
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.Filter-Container {
+    display: flex;
+    flex-direction: row;
+}
+
+/*.Head-Search {
+    flex: 2;
+    margin-right: 40%;
+}*/
+
+.Search-Bar {
+   flex:2;
+    max-height: 60px;
+    margin-right: 40%;
+}
+
+.Row1 {
+    flex: auto;
+}
+
+.Row2 {
+    flex: auto;
+}
