@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "ModulePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/custom/ModuleStyle.css" rel="stylesheet" type="text/css" />
+
+<h2>ModulePage</h2>
+
+<div class="Container">
+    <p style="padding-left:20px;">@Html.ActionLink("Home", "Index", "Index") > [Insert Module Name]</p>
+
+    <h1>Development Tools</h1>
+    <div class="Overview-CheckList">
+        <div class="Overview">
+            <p class="Overview-P">Overview</p>
+            <hr style="margin-top: 0;" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div class="CheckList">
+            <p class="CheckList-P">CheckList</p>
+            <hr style="margin-top: 0;" />
+            <div class="Exercises">
+                <p>Exercise 1<img id="Unchecked" src="~/Images/square.svg" /></p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("img").click(function () {
+            
+            console.log($(this).attr("src"))
+        })
+    })
+</script>
