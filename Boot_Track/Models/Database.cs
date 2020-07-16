@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Web;
 
@@ -66,6 +67,22 @@ namespace Boot_Track.Models
             //mod.Comments = { { "Kam", "YEET"}, { "Drew", "VS CODE IS BETTER"} };
             modList.Add(mod);
             return modList;
+        }
+
+        private static List<Models.Intern> _interns = GetIntern();
+        private static List<Models.Intern> GetIntern()
+        {
+            var internList = new List<Intern>();
+          
+            for (int i = 0; i<_internTable.Length; i++)
+            {
+                Intern intern = new Intern();
+                intern.FirstName = _internTable[i, 0];
+                intern.LastName = _internTable[i, 1];
+                internList.Add(intern);
+            }
+
+            return internList;
         }
 
     }
