@@ -1,4 +1,5 @@
-﻿body {
+﻿/*Index Page CSS*/
+body {
 }
 
 h2 {
@@ -35,3 +36,4 @@ h2 {
 .Row2 {
     flex: auto;
 }
+
