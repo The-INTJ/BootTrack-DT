@@ -29,6 +29,32 @@
         </div>
     </div>
 
+    @* Script before table bc dropdowns need toggleShow declared *@
+    <script>
+        $(document).ready({
+            /* When the user clicks on the button,
+            toggle between hiding and showing the dropdown content */
+            toggleShow = () => {
+                $("#myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown menu if the user clicks outside of it
+            onclick = (event) => {
+                console.log("clicked");
+                if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = $(".dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+
     <table class="table">
         <thead class="thead-light">
             <tr>
@@ -48,11 +74,13 @@
                 <td>5/20</td>
                 <td>Both</td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="Dropdown">
+                        <button onclick="toggleShow()" class="dropbtn">Blogs</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            @Html.ActionLink("Blogs", "Blog", "Index")
+                            @Html.ActionLink("Admin", "SignIn", "Admin")
+                        </div>
+                    </div>
                 </td>
                 <td>
                     <select id="progress">
@@ -245,5 +273,5 @@
             </tr>
         </tbody>
     </table>
-
 </div>
+

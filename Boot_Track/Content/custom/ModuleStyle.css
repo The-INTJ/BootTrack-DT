@@ -28,11 +28,27 @@ h1, h2 {
     margin-right: 15px;
 }
 
-.Overview-P, .CheckList-P {
+.Overview-P-Bold, .CheckList-P-Bold, .Module-Dashboard-P-Bold {
     font-weight: bold;
     font-size: 24px;
     margin-left: 7%;
     margin-bottom: 0;
+    padding-top: 3px;
+}
+
+.Overview-P {
+    font-size: 18px;
+    margin-left: 7%;
+    margin-right: 7%;
+    padding-top: 3px;
+}
+
+.Module-SMEs {
+    display: flex;
+}
+
+.SME {
+    padding-left: 80px;
 }
 
 hr {
@@ -42,4 +58,17 @@ hr {
 
 .Exercises {
     display: inline-block;
+}
+
+.Module-Dashboard {
+    background: #E5E5E5;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    height: 400px;
+}
+
+.Dash-Headers {
+    background-color: #ffffff;
 }
