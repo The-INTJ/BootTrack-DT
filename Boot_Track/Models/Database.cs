@@ -29,9 +29,12 @@ namespace Boot_Track.Models
          *  progress table and update it. Make sure to perform error checking, wouldn't want to try
          *  this before the table has been created.
          *
+         *
          * TABLES
          *  _progress -- A 3-column table: Intern / Module / Progress (int representing percentage of completion)
          *
+         * OTHER
+         *  Change Module.Comments to link Intern objects with comments
          */
 
         private static String[,] _internTable =
@@ -60,7 +63,7 @@ namespace Boot_Track.Models
             mod.Checklist = new []{ "Set-up Visual Studio", "Win At Life", "Purchase Gorton's Fishsticks"};
             mod.InstructionLink = "https://teams.microsoft.com/l/channel/19%3Af9d21f79034c4f6690ceed6586e73248%40thread.skype/tab%3A%3A937ecfbd-5b52-4d8c-8856-e5447c0e8f7e?groupId=cbb572f4-6cdd-467d-8a4b-8cef4e6f2b98&tenantId=243bd71d-cef7-442d-b37f-3ff10a3e2832";
             mod.Rating = new []{ 10, 8, 2};
-            mod.Comments = { { "Kam", "YEET"}, { "Drew", "VS CODE IS BETTER"} };
+            //mod.Comments = { { "Kam", "YEET"}, { "Drew", "VS CODE IS BETTER"} };
             modList.Add(mod);
             return modList;
         }
