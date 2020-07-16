@@ -40,7 +40,7 @@ namespace Boot_Track.Models
         private static String[,] _internTable =
             {
                 { "Drew", "Taylor" },
-                { "Kam", "Ndirango" },
+                { "Kam", "Ndirangu" },
                 { "Rebekah", "Williamson" },
                 { "Henry", "Faulkner" },
                 { "Alex", "Karadsheh" },
