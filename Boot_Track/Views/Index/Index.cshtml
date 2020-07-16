@@ -31,28 +31,37 @@
 
     @* Script before table bc dropdowns need toggleShow declared *@
     <script>
-        $(document).ready({
-            /* When the user clicks on the button,
-            toggle between hiding and showing the dropdown content */
-            toggleShow = () => {
-                $("#myDropdown").classList.toggle("show");
-            }
+        function toggleShow(a) {
+            a.parentNode.getElementsByClassName('dropdown-content')[0].classList.toggle("show");
+        }
 
-            // Close the dropdown menu if the user clicks outside of it
-            onclick = (event) => {
-                console.log("clicked");
-                if (!event.target.matches('.dropbtn')) {
-                    var dropdowns = $(".dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) {
-                        var openDropdown = dropdowns[i];
-                        if (openDropdown.classList.contains('show')) {
-                            openDropdown.classList.remove('show');
-                        }
-                    }
+        /* Change main selector text to option clicked */
+        function changeText(text) {
+            console.log(text.parentNode.parentNode.querySelector)
+            text.parentNode.parentNode.querySelector('.dropbtn').innerText = text.innerText;
+            if (text.innerText === 'In Progress') {
+                text.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#F0E8A0';
+            } else if (text.innerText === 'Completed') {
+                text.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#99EAB9';
+            } else {
+                text.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#E5E5E5';
+            }
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            console.log("clicked");
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    } 
                 }
             }
-        })
+        }
     </script>
 
     <table class="table">
@@ -74,41 +83,54 @@
                 <td>5/20</td>
                 <td>Both</td>
                 <td>
-                    <div class="Dropdown">
-                        <button onclick="toggleShow()" class="dropbtn">Blogs</button>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
                         <div id="myDropdown" class="dropdown-content">
-                            @Html.ActionLink("Blogs", "Blog", "Index")
-                            @Html.ActionLink("Admin", "SignIn", "Admin")
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -116,39 +138,54 @@
                 <td>5/27</td>
                 <td>Both</td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -156,39 +193,54 @@
                 <td>6/02</td>
                 <td>Both</td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -196,39 +248,54 @@
                 <td>6/02</td>
                 <td>TC</td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -236,39 +303,54 @@
                 <td>6/02</td>
                 <td>TC</td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <select id="progress">
-                        <option value=""></option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </tbody>
