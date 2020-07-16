@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
     <ul class="nav nav-fill navbar-expand-lg navbar-light bg-light fixed-top" style="list-style: none; padding-top:30px; padding-bottom:30px;">
@@ -28,7 +29,6 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/bootstrap-select.min.js"></script>
     @RenderSection("scripts", required: false)
