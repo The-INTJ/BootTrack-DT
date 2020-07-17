@@ -141,6 +141,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\BootTrack-Logo.png" />
     <Content Include="Images\check-square.svg" />
     <Content Include="Images\Grey-Logo.PNG" />
     <Content Include="Images\square.svg" />
