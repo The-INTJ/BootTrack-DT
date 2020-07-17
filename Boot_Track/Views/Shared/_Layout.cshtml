@@ -6,28 +6,25 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+    <ul class="nav nav-fill navbar-expand-lg navbar-light fixed-top" style="list-style: none; padding-top:30px; padding-bottom:30px; background-color: #C4C4C4;">
+        <li class="nav-item">
+            <img class="Logo" src="~/Images/BootTrack-Logo.png" alt="Logo" />
+        </li>
+        <li class="nav-item">
+            <a class="Title-Link" href="/Index/Index"><strong>BOOT TRACK</strong></a>
+        </li>
+        <li class="nav-item">
+            <svg height="80px" width="80px">
+                <circle cx="40px" cy="40px" r="32px" stroke="black" stroke-width="3" fill="grey" />
+            </svg>
+            @*<img class="Avatar" src="~/Images/Grey-Circle.PNG" alt="Avatar" />*@
+        </li>
+    </ul>
+
+    <div @*class="container body-content"*@>
         @RenderBody()
         <hr />
         <footer>
@@ -35,8 +32,8 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

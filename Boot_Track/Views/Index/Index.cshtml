@@ -1,0 +1,359 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/custom/IndexStyle.css" rel="stylesheet" type="text/css" />
+
+<div class="Container">
+
+    <h2 style="text-align: center;">Boot Camp Dashboard</h2>
+    <div class="Filter-Container">
+
+        <input type="text" class="Search-Bar" placeholder="Filter by Module" /> @* Try to add svg of search icon in placeholder*@
+
+        <div class="Row1">
+            <input type="checkbox" class="Hide-Complete-Modules" />
+            <p>Hide Modules with 100% Completion</p>
+            <input type="checkbox" class="My-Status" />
+            <p>Show Only My Module Status</p>
+        </div>
+        <div class="Row2">
+            <div style="display: inline;">
+                <input type="checkbox" class="BC-Modules" />
+                <p>BC Modules Only</p>
+            </div>
+            <input type="checkbox" class="TC-Modules" />
+            <p>TC Modules Only</p>
+        </div>
+    </div>
+
+    @* Script before table bc dropdowns need toggleShow declared *@
+    <script>
+        function toggleShow(a) {
+            a.parentNode.getElementsByClassName('dropdown-content')[0].classList.toggle("show");
+        }
+
+        /* Change main selector text to option clicked */
+        function changeText(text) {
+            console.log(text.parentNode.parentNode.querySelector)
+            text.parentNode.parentNode.querySelector('.dropbtn').innerText = text.innerText;
+            if (text.innerText === 'In Progress') {
+                text.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#F0E8A0';
+            } else if (text.innerText === 'Completed') {
+                text.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#99EAB9';
+            } else {
+                text.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#E5E5E5';
+            }
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            console.log("clicked");
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    } 
+                }
+            }
+        }
+    </script>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Module #</th>
+                <th scope="col">Est. Target<br />Completion</th>
+                <th scope="col">Type</th>
+                <th scope="col">Henry</th>
+                <th scope="col">Drew</th>
+                <th scope="col">Kam</th>
+                <th scope="col">Alex</th>
+                <th scope="col">Rebekah</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Html.ActionLink("#1 - Dev Tools", "ModulePage", "Modules")</th>
+                <td>5/20</td>
+                <td>Both</td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">#2 - HTML &amp; CSS</th>
+                <td>5/27</td>
+                <td>Both</td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">#3 - Javascript 101</th>
+                <td>6/02</td>
+                <td>Both</td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">#4 - C# 101</th>
+                <td>6/02</td>
+                <td>TC</td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">#5 - SQL 101</th>
+                <td>6/02</td>
+                <td>TC</td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="changeText(this)" value=""></button>
+                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                            <button onclick="changeText(this)" href="" value="Completed">Completed</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
