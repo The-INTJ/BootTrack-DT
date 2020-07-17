@@ -26,3 +26,18 @@ textarea {
 ul {
     list-style: none;
 }
+
+.Logo {
+    width: 100px;
+    height: 79px;
+}
+
+.Title-Link {
+    color: #FFFFFF;
+    font-size: 36px;
+}
+
+.Title-Link:hover {
+    text-decoration: none;
+    color: #e9ecef;
+}

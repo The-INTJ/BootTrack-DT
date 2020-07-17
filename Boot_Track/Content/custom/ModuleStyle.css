@@ -58,17 +58,42 @@ hr {
 
 .Exercises {
     display: inline-block;
+    width: 100%;
+    position: relative;
+    padding-left: 7%;
+}
+
+.Exercises p {
+    font-weight: bold;  
+}
+
+.Exercise-Img {
+    position: absolute;
+    left: 70%;
 }
 
 .Module-Dashboard {
     background: #E5E5E5;
-    margin-top: 40px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 40px 10% 0 10%; /*top right bottom left aka clockwise*/
+    padding-bottom: 20px;
     width: 80%;
-    height: 400px;
+    height: auto;
 }
 
 .Dash-Headers {
     background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 25px 10% 12px 10%; /*top right bottom left aka clockwise*/
+    padding: 20px 10px 20px 10px;
+}
+
+.Dash-Camper {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 10% 12px 10%; /*top right bottom left aka clockwise*/
+    padding: 20px 10px 20px 10px;
 }
