@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace Boot_Track.Models
 {
@@ -38,9 +40,9 @@ namespace Boot_Track.Models
          *  Change Module.Comments to link Intern objects with comments
          */
 
-        private static String[,] _internTable =
+        private static String[,] _dummyInterns =
             {
-                { "Drew", "Taylor" },
+                { "Drew", "Taylor"},
                 { "Kam", "Ndirangu" },
                 { "Rebekah", "Williamson" },
                 { "Henry", "Faulkner" },
@@ -51,6 +53,29 @@ namespace Boot_Track.Models
             {
                 { "TL", "Stephanchick" }
             };
+
+        private static void CreateProgress() 
+        {
+            
+            
+            for (int i = 0; i < _dummyInterns.GetLength(0); i++)
+            {
+                for (int j = 0; j < _dummyInterns.GetLength(0); j++)
+                {
+                   
+                }
+
+            }
+            
+        }
+
+        private static void SetProgress(Intern intern, Module module, int progress)
+        {
+
+        }
+        //private static object _progress = { 
+        //in here needs to be the intern, the module, and the progress
+        //};
 
         private static List<Models.Module> _modules = GetModules();
 
@@ -64,21 +89,28 @@ namespace Boot_Track.Models
             mod.Checklist = new []{ "Set-up Visual Studio", "Win At Life", "Purchase Gorton's Fishsticks"};
             mod.InstructionLink = "https://teams.microsoft.com/l/channel/19%3Af9d21f79034c4f6690ceed6586e73248%40thread.skype/tab%3A%3A937ecfbd-5b52-4d8c-8856-e5447c0e8f7e?groupId=cbb572f4-6cdd-467d-8a4b-8cef4e6f2b98&tenantId=243bd71d-cef7-442d-b37f-3ff10a3e2832";
             mod.Rating = new []{ 10, 8, 2};
-            //mod.Comments = { { "Kam", "YEET"}, { "Drew", "VS CODE IS BETTER"} };
+            mod.Comments = new [,]
+                { 
+                    { "Kam" , "YEET"}, 
+                    { "Drew", "VS CODE IS BETTER"}, 
+                };
             modList.Add(mod);
             return modList;
         }
 
-        private static List<Models.Intern> _interns = GetIntern();
-        private static List<Models.Intern> GetIntern()
+        public static List<Models.Intern> _internsTable = GetIntern();
+        public static List<Models.Intern> GetIntern()
         {
             var internList = new List<Intern>();
           
-            for (int i = 0; i<_internTable.Length; i++)
+            for (int i = 0; i<_dummyInterns.GetLength(0); i++)
             {
+                //Console.WriteLine(_dummyInterns.GetLength(0));
                 Intern intern = new Intern();
-                intern.FirstName = _internTable[i, 0];
-                intern.LastName = _internTable[i, 1];
+                intern.FirstName = _dummyInterns[i, 0];
+                intern.LastName = _dummyInterns[i, 1];
+                intern.TotalInternProgress = 0;
+                intern.ActiveKey = 1;
                 internList.Add(intern);
             }
 

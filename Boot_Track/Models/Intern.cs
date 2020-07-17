@@ -14,7 +14,7 @@ namespace Boot_Track.Models
 
         public string LastName { get; set; }
 
-        public int  Progress { get; set; }
+        public int TotalInternProgress { get; set; }
 
         public int ActiveKey { get; set; }
 

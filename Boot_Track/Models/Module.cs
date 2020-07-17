@@ -22,7 +22,7 @@ namespace Boot_Track.Models
 
         public int [] Rating { get; set; }
 
-        public string [][] Comments { get; set; }
+        public object [,] Comments { get; set; }
 
 
     }
