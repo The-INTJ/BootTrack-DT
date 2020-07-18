@@ -116,7 +116,7 @@ namespace Boot_Track.Models
         /// Sets module paramaters
         /// _modules just holds the list of modules
 
-        private static List<Models.Module> _modules;
+        private static List<Models.Module> _modules = new List<Module>();
         //= GetModules();
 
         public static void InitModules()
@@ -135,8 +135,7 @@ namespace Boot_Track.Models
                     { "Drew", "VS CODE IS BETTER"}, 
                 };
             mod.completionDate = new DateTime(2020, 7, 17);
-            modList.Add(mod);
-            _modules = modList;
+            _modules.Add(mod);
         }
 
         public static List<Models.Module> GetModules()
