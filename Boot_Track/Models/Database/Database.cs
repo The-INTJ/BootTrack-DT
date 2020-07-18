@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.EnterpriseServices;
@@ -54,30 +55,69 @@ namespace Boot_Track.Models
                 { "TL", "Stephanchick" }
             };
 
-        private static void CreateProgress() 
+        /// This method initializes the intern table by assigning the interns
+        /// to a progress object with an associated module and progress for 
+        /// each intern/module pair
+        /// 
+        /// prog0 prog1 prog2 prog3
+        /// progMod 0
+        /// progMod 1
+        /// progMod 2
+        ///
+
+        
+        public static void InitProgress() 
         {
             
+            var progressList = new List<List<Progress>>();
             
             for (int i = 0; i < _dummyInterns.GetLength(0); i++)
             {
-                for (int j = 0; j < _dummyInterns.GetLength(0); j++)
+                
+                for (int j = 0; j < _modules.Count(); j++)
                 {
-                   
+                    Progress progressInd = new Progress();
+                    progressInd.intern = _internsTable[i];
+                    progressInd.module = _modules[j];
+                    progressInd.progress = 0;
+                    _progressTable[i].Add(progressInd);
                 }
-
             }
+            _progressTable = progressList;
+
             
         }
-
-        private static void SetProgress(Intern intern, Module module, int progress)
+        public static List<List<Models.Progress>> GetProgress()
         {
-
+            return _progressTable;
         }
-        //private static object _progress = { 
-        //in here needs to be the intern, the module, and the progress
-        //};
 
-        private static List<Models.Module> _modules = GetModules();
+        private static List<List<Models.Progress>> _progressTable;
+        //= InitProgress();
+     
+        
+        public static void SetProgress(Intern internParam, Module moduleParam, int progressParam)
+        {
+            for (int i = 0; i < _dummyInterns.GetLength(0); i++)
+            {
+                for (int j = 0; j < _modules.Count(); j++)
+                {
+                    if ((_progressTable[i][j].intern.ActiveKey == internParam.ActiveKey) && (_progressTable[i][j].module.Title.Equals(moduleParam.Title)))
+                    {
+                        _progressTable[i][j].progress = progressParam;
+                    }
+                }
+            }
+        }
+
+        /// This is a method that creates the module tables
+        /// and populates it with the module values, but might have to
+        /// be hard coded
+        /// Sets module paramaters
+        /// _modules just holds the list of modules
+
+        private static List<Models.Module> _modules;
+        //= GetModules();
 
         private static List<Models.Module> GetModules()
         {
@@ -94,14 +134,21 @@ namespace Boot_Track.Models
                     { "Kam" , "YEET"}, 
                     { "Drew", "VS CODE IS BETTER"}, 
                 };
+            mod.completionDate = new DateTime(2020, 7, 17);
             modList.Add(mod);
             return modList;
         }
 
-        public static List<Models.Intern> _internsTable = GetIntern();
-        public static List<Models.Intern> GetIntern()
+        /// This is a method that creates the intern table
+        /// and populates it with the intern values from _dummyinterns
+        /// Sets total intern progress to 0, and gives an active key
+        /// _internsTable just holds the return value of .GetIntern()
+
+        public static List<Models.Intern> _internsTable;
+        //= GetIntern();
+        public static void InitIntern()
         {
-            var internList = new List<Intern>();
+            //var internList = new List<Intern>();
           
             for (int i = 0; i<_dummyInterns.GetLength(0); i++)
             {
@@ -110,13 +157,17 @@ namespace Boot_Track.Models
                 intern.FirstName = _dummyInterns[i, 0];
                 intern.LastName = _dummyInterns[i, 1];
                 intern.TotalInternProgress = 0;
-                intern.ActiveKey = 1;
-                internList.Add(intern);
+                intern.ActiveKey = i;
+                _internsTable.Add(intern);
             }
 
-            return internList;
+           // _internsTable = internList;
+            
         }
-
+        public static List<Intern> GetInterns()
+        {
+            return _internsTable;
+        }
     }
 
 }
