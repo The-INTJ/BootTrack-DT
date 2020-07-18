@@ -1,4 +1,5 @@
-﻿
+﻿@using Boot_Track.Models
+@model Boot_Track.Models.Module
 @{
     ViewBag.Title = "ModulePage";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,9 +10,9 @@
 <h2>ModulePage</h2>
 
 <div class="Container">
-    <p style="padding-left:20px;">@Html.ActionLink("Home", "Index", "Index") > [Insert Module Name]</p>
+    <p style="padding-left:20px;">@Html.ActionLink("Home", "Index", "Index") > @Model.Title </p>
 
-    <h1>[Insert Module Name]</h1>
+    <h1>@Model.Title</h1>
     <div class="Overview-CheckList">
         <div class="Overview">
             <p class="Overview-P-Bold">Overview</p>
@@ -51,11 +52,11 @@
             <p class="CheckList-P-Bold">CheckList</p>
             <hr style="margin-top: 0;" />
             <div class="Exercises">
-                <p>Exercise 1<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg"/></p>
+                <p>Exercise 1<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
                 <p>Exercise 2<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
                 <p>Exercise 3<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
                 <p>Exercise 4<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
-                <p>Ready for Review<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg"/></p>
+                <p>Ready for Review<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
             </div>
         </div>
     </div>
@@ -146,7 +147,7 @@
                         <button onclick="changeText(this)" href="" value="Unhelpful">Unhelpful</button>
                     </div>
                 </div>
-                
+
             </div>
             <div class="Rating-Bars">
                 <div class="Rating-Bar">
@@ -169,6 +170,6 @@
                 </div>
             </div>
         </div>
-        <input type="submit" value="Submit" style="margin-left: 4%;"/>
+        <input type="submit" value="Submit" style="margin-left: 4%;" />
     </div>
 </div>
