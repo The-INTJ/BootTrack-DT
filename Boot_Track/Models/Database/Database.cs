@@ -119,7 +119,7 @@ namespace Boot_Track.Models
         private static List<Models.Module> _modules;
         //= GetModules();
 
-        private static List<Models.Module> GetModules()
+        public static void InitModules()
         {
             var modList = new List<Module>();
             Module mod = new Module();
@@ -136,7 +136,12 @@ namespace Boot_Track.Models
                 };
             mod.completionDate = new DateTime(2020, 7, 17);
             modList.Add(mod);
-            return modList;
+            _modules = modList;
+        }
+
+        public static List<Models.Module> GetModules()
+        {
+            return _modules;
         }
 
         /// This is a method that creates the intern table
