@@ -24,6 +24,8 @@ namespace Boot_Track.Models
 
         public object [,] Comments { get; set; }
 
+        public DateTime completionDate { get; set; }
+
 
     }
 }

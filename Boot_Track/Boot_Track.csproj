@@ -129,6 +129,7 @@
     <Compile Include="Models\Database\Database.cs" />
     <Compile Include="Models\Intern.cs" />
     <Compile Include="Models\Module.cs" />
+    <Compile Include="Models\Progress.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -176,7 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
