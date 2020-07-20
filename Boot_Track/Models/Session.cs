@@ -74,5 +74,15 @@ namespace Boot_Track.Models
                 logins = Database.GetLogins();
             }
         }
+
+        public void SetProgressChecklist(Intern internParam, Module moduleParam, int num, bool state)
+        {
+            Database.SetProgressChecklist(internParam, moduleParam, num, state);
+        }
+
+        public bool GetProgressChecklist(Intern internParam, Module moduleParam, int num, bool state)
+        {
+            return Database.GetProgressChecklist(internParam, moduleParam, num);
+        }
     }
 }
