@@ -69,21 +69,24 @@ namespace Boot_Track.Models
         public static void InitProgress() 
         {
             
-            var progressList = new List<List<Progress>>();
+            List<List<Progress>> progressList = new List<List<Progress>>();
             
-            for (int i = 0; i < _dummyInterns.GetLength(0); i++)
+            for (int i = 0; i < _modules.Count(); i++)
             {
-                
-                for (int j = 0; j < _modules.Count(); j++)
+                List<Models.Progress> sublist = new List<Models.Progress>();
+                for (int j = 0; j < _internsTable.Count(); j++)
                 {
+                   
                     Progress progressInd = new Progress();
-                    progressInd.intern = _internsTable[i];
-                    progressInd.module = _modules[j];
+                    progressInd.intern = _internsTable[j];
+                    progressInd.module = _modules[i];
                     progressInd.progress = 0;
-                    _progressTable[i].Add(progressInd);
+                    sublist.Add(progressInd);
                 }
+
+                _progressTable.Add(sublist);
             }
-            _progressTable = progressList;
+            
 
             
         }
@@ -92,13 +95,13 @@ namespace Boot_Track.Models
             return _progressTable;
         }
 
-        private static List<List<Models.Progress>> _progressTable;
+        private static List<List<Models.Progress>> _progressTable = new List<List<Progress>>();
         //= InitProgress();
      
         
         public static void SetProgress(Intern internParam, Module moduleParam, int progressParam)
         {
-            for (int i = 0; i < _dummyInterns.GetLength(0); i++)
+            for (int i = 0; i < _internsTable.Count(); i++)
             {
                 for (int j = 0; j < _modules.Count(); j++)
                 {

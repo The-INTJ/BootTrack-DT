@@ -12,9 +12,9 @@ namespace Boot_Track.Models
     public class Session
     {
         
-        public List<Intern> interns;
+        public List<Intern> interns = new List<Intern>();
 
-        public List<List<Progress>> progress;
+        public List<List<Progress>> progress = new List<List<Progress>>();
 
         public List<Module> modules = new List<Module>();
 
@@ -22,9 +22,10 @@ namespace Boot_Track.Models
 
         public void GetProgress()
         {
-            if (Database.GetProgress() == null)
+            if (!Database.GetProgress().Any())
             {
                 Database.InitProgress();
+                progress = Database.GetProgress();
             }
             else
             {

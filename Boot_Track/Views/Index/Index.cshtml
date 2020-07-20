@@ -63,10 +63,11 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                @using (Html.BeginForm("SendEmail", "Index")) {
-                    <input type = "submit" class="btn btn-danger" value="Send for Review" @*onclick='window.location.href ="/Modules/ModulePage"'*@/>
-                } 
-                
+                @using (Html.BeginForm("SendEmail", "Index"))
+                {
+                    <input type="submit" class="btn btn-danger" value="Send for Review" @*onclick='window.location.href ="/Modules/ModulePage"'*@ />
+                }
+
             </div>
 
         </div>
@@ -121,121 +122,41 @@
             </tr>
 
         </thead>
-            <tbody>
-                @{
-                    foreach (var module in @Model.modules)
-                    {
+        <tbody>
+            @{
+                for (int i = 0; i<@Model.modules.Count(); i++)
+                {
 
-                        <tr>
-                            <th scope="row"><a href="@Url.Action("ModulePage", "Modules", new { ModuleTitle = module.Title })">@module.Title</a></th>
-                            <td>5/20</td>
-                            <td>Both</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button type="button" onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button type="button" onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <button onclick="changeText(this)" value=""></button>
-                                        <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                        <button onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                    <tr>
+                        <th scope="row"><a href="@Url.Action("ModulePage", "Modules", new { ModuleTitle = @Model.modules[i].Title })">@Model.modules[i].Title</a></th>
+                        <td>5/20</td>
+                        <td>Both</td>
+                        @{
+                            foreach (var moduleProgress in @Model.progress[i])
+                            {
+                                
 
-                    }
+                                    <td>
+                                        
+                                        <div class="dropdown">
+                                            <button onclick="toggleShow(this)" class="dropbtn"></button>
+                                            <div id="myDropdown" class="dropdown-content">
+                                                <button onclick="changeText(this)" value=""></button>
+                                                <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                                                <button type="button" onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                
+                            }
+                        }
+
+                    </tr>
+
                 }
+            }
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </div>

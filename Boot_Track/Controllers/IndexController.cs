@@ -19,6 +19,8 @@ namespace Boot_Track.Controllers
             var sesh = new Session();
             sesh.GetModules();
             sesh.GetInterns();
+            sesh.GetProgress();
+
             return View(sesh);
         }
 
