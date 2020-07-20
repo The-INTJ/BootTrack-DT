@@ -43,15 +43,16 @@ namespace Boot_Track.Models
                 for (int j = 0; j < _internsTable.Count(); j++)
                 {
                    
-                    Progress progressInd = new Progress();
-                    progressInd.intern = _internsTable[j];
-                    progressInd.module = _modules[i];
-                    progressInd.progress = 0;
+                    Progress progress = new Progress();
+                    progress.intern = _internsTable[j];
+                    progress.module = _modules[i];
+                    progress.progress = 0;
+                    progress.checklistState = new List<bool>();
                     //man this code could really do anything idk what this is
-                    for (int k = 0; k < _modules[i].Checklist.Length; k++) {
-                        //progressInd.checklistState[k] = false;
+                    for (int k = 0; k < _modules[i].Checklist.Length; k++) {    
+                        progress.checklistState.Add(false);
                     }
-                    sublist.Add(progressInd);
+                    sublist.Add(progress);
                 }
 
                 _progressTable.Add(sublist);
@@ -76,7 +77,7 @@ namespace Boot_Track.Models
             }
         }
 
-        public static void GetProgressChecklist(Intern internParam, Module moduleParam, int num, bool state)
+        public static bool GetProgressChecklist(Intern internParam, Module moduleParam, int num)
         {
             for (int i = 0; i < _internsTable.Count(); i++)
             {
@@ -84,10 +85,13 @@ namespace Boot_Track.Models
                 {
                     if ((_progressTable[i][j].intern.ActiveKey == internParam.ActiveKey) && (_progressTable[i][j].module.Title.Equals(moduleParam.Title)))
                     {
-                        _progressTable[i][j].checklistState[num] = state;
+                        return _progressTable[i][j].checklistState[num];
                     }
+                  
                 }
+                
             }
+            return false;
         }
 
         private static List<List<Models.Progress>> _progressTable = new List<List<Progress>>();
