@@ -22,6 +22,8 @@ namespace Boot_Track.Models
 
         public Email email = new Email();
 
+        public Module CurrModule = new Module();
+
         public void GetProgress()
         {
             if (!Database.GetProgress().Any())
