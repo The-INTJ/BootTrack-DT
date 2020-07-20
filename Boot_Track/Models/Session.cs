@@ -18,6 +18,8 @@ namespace Boot_Track.Models
 
         public List<Module> modules = new List<Module>();
 
+        public Email email = new Email();
+
         public void GetProgress()
         {
             if (Database.GetProgress() == null)
@@ -32,9 +34,10 @@ namespace Boot_Track.Models
 
         public void GetInterns()
         {
-            if (Database.GetInterns() == null)
+            if (!Database.GetInterns().Any())
             {
                 Database.InitIntern();
+                interns = Database.GetInterns();
             }
             else
             {

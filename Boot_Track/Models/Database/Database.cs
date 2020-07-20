@@ -148,7 +148,7 @@ namespace Boot_Track.Models
             mod2.Comments = new object[,]
             {
                 { "Alex", "Fork" },
-                { "Henry", "I suck at smash" },
+                { "Henry", "I'm good at smash" },
             };
             _modules.Add(mod2);
 
@@ -164,7 +164,7 @@ namespace Boot_Track.Models
         /// Sets total intern progress to 0, and gives an active key
         /// _internsTable just holds the return value of .GetIntern()
 
-        public static List<Models.Intern> _internsTable;
+        public static List<Models.Intern> _internsTable = new List<Intern>();
         //= GetIntern();
         public static void InitIntern()
         {
@@ -184,9 +184,9 @@ namespace Boot_Track.Models
            // _internsTable = internList;
             
         }
-        public static List<Intern> GetInterns()
+        public static List<Models.Intern> GetInterns()
         {
-            return _internsTable;
+            return _internsTable; 
         }
     }
 
