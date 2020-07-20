@@ -16,6 +16,8 @@ h2 {
 .Filter-Container {
     display: flex;
     flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /*.Head-Search {

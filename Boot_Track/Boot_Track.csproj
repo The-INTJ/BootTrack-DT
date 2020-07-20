@@ -319,6 +319,7 @@
     <Content Include="Views\Modules\ModulePage.cshtml" />
     <Content Include="Views\Intern\InternTable.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Index\AdminIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

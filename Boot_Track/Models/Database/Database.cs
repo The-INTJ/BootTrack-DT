@@ -56,9 +56,6 @@ namespace Boot_Track.Models
 
                 _progressTable.Add(sublist);
             }
-            
-
-            
         }
         public static List<List<Models.Progress>> GetProgress()
         {
@@ -191,6 +188,23 @@ namespace Boot_Track.Models
         public static List<Models.Intern> GetInterns()
         {
             return _internsTable; 
+        }
+
+        public static List<Models.Login> _LoginTable = new List<Login>();
+
+        public static void InitLogin ()
+        {
+            Login henrySignIn = new Login
+            {
+                Username = "henry.faulkner",
+                Password = "henryPass"
+            };
+            _LoginTable.Add(henrySignIn);
+        }
+
+        public static List<Models.Login> GetLogins()
+        {
+            return _LoginTable;
         }
     }
 

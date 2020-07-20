@@ -14,6 +14,11 @@ namespace Boot_Track.Controllers
         [Route("Modules/ModulePage/{ModuleTitle}")]
         public ActionResult ModulePage(string ModuleTitle)
         {
+            if (HttpContext.Request.Cookies["IsLoggedIn"] == null)
+            {
+                return Redirect("/Login/Index");
+            }
+
             var sesh = new Session();
             sesh.GetModules();
             foreach (var module in sesh.modules)
