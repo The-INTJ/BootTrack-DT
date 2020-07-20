@@ -32,9 +32,10 @@ namespace Boot_Track.Models
 
         public void GetInterns()
         {
-            if (Database.GetInterns() == null)
+            if (!Database.GetInterns().Any())
             {
                 Database.InitIntern();
+                interns = Database.GetInterns();
             }
             else
             {

@@ -98,6 +98,9 @@
 
     <table class="table">
     <thead class="thead-light">
+        @{ 
+            foreach (var intern in Model.interns) {
+
     <tr>
         <th scope="col">Module #</th>
         <th scope="col">Est. Target<br />Completion</th>
@@ -113,6 +116,8 @@
         <th scope="col">Greyson</th>
         <th scope="col">Eric</th>
     </tr>
+                }
+            }
     </thead>
 
     <tbody>
