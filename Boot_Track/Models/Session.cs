@@ -44,14 +44,14 @@ namespace Boot_Track.Models
 
         public void GetModules()
         {
-            if (Database.GetModules() == null)
+            if (!Database.GetModules().Any())
             {
                 Database.InitModules();
                 modules = Database.GetModules();
             }
             else
             {
-                Database.InitModules();
+                //Database.InitModules();
                 modules = Database.GetModules();
             }
         }

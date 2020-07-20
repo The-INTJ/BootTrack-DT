@@ -136,6 +136,22 @@ namespace Boot_Track.Models
                 };
             mod.completionDate = new DateTime(2020, 7, 17);
             _modules.Add(mod);
+
+            // Second module hardcode
+            Module mod2 = new Module();
+            mod2.Title = "HTML and CSS 101";
+            mod2.Overview = "HTML is the most basic building block of the Web. \n CSS is used to style and lay out web pages. \n The Flexbox Layout aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic. \n Media query is a CSS technique that made it possible to define different style rules for different media types.";
+            mod2.SMEs = new[] {"George Chang", "Mike Ward", "Michael Yao", "Storm Anderson"};
+            mod2.Checklist = new[]{ "Make Fabrikam Website", "Do the thang", "Make page for each school!!!!" };
+            mod2.InstructionLink = "https://teams.microsoft.com/l/channel/19%3A1435ed5a7d18478288473a4e72cf37f1%40thread.skype/tab%3A%3A1c021751-0d1f-494b-946e-8b79e82bc515?groupId=cbb572f4-6cdd-467d-8a4b-8cef4e6f2b98&tenantId=243bd71d-cef7-442d-b37f-3ff10a3e2832";
+            mod2.Rating = new[] {10, 8, 2};
+            mod2.Comments = new object[,]
+            {
+                { "Alex", "Fork" },
+                { "Henry", "I suck at smash" },
+            };
+            _modules.Add(mod2);
+
         }
 
         public static List<Models.Module> GetModules()
