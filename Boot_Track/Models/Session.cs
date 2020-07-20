@@ -18,6 +18,8 @@ namespace Boot_Track.Models
 
         public List<Module> modules = new List<Module>();
 
+        public Email email = new Email();
+
         public void GetProgress()
         {
             if (Database.GetProgress() == null)

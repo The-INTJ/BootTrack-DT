@@ -128,6 +128,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Database\Database.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Intern.cs" />
     <Compile Include="Models\Module.cs" />
     <Compile Include="Models\Progress.cs" />
