@@ -12,8 +12,5 @@ namespace Boot_Track.Models
 
         public string Password { get; set; }
 
-        public bool IsLoggedIn { get; set; }
-
-
     }
 }

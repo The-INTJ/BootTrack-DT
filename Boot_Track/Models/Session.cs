@@ -18,6 +18,8 @@ namespace Boot_Track.Models
 
         public List<Module> modules = new List<Module>();
 
+        public List<Login> logins = new List<Login>();
+
         public Email email = new Email();
 
         public void GetProgress()
@@ -57,6 +59,19 @@ namespace Boot_Track.Models
             {
                 //Database.InitModules();
                 modules = Database.GetModules();
+            }
+        }
+
+        public void GetLogins()
+        {
+            if (!Database.GetLogins().Any())
+            {
+                Database.InitLogin();
+                logins = Database.GetLogins();
+            }
+            else
+            {
+                logins = Database.GetLogins();
             }
         }
     }

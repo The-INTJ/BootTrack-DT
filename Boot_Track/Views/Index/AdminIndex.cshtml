@@ -1,0 +1,86 @@
+﻿@model Boot_Track.Models.Session
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/custom/IndexStyle.css" rel="stylesheet" type="text/css" />
+
+<div class="Container">
+    <h2 style="text-align: center;">Boot Camp Dashboard</h2>
+
+    <div class="Filter-Container">
+
+        <input type="text" class="Search-Bar" placeholder="Filter by Module" /> @* Try to add svg of search icon in placeholder*@
+
+        <div class="Rows">
+            <div class="Row1">
+                <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" />
+                <span>Hide Modules with 100% Completion</span>
+                <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" />
+                <span>Show Only My Module Status</span>
+            </div>
+            <div class="Row2">
+                <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" />
+                <span>BC Modules Only</span>
+                <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" style="padding-left: 140px;" />
+                <span>TC Modules Only</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Module #</th>
+                <th scope="col">Est. Target<br />Completion</th>
+                <th scope="col">Type</th>
+
+                @{
+                    foreach (var intern in @Model.interns)
+                    {
+                        <th scope="col">
+                            @intern.FirstName
+                        </th>
+                    }
+                }
+            </tr>
+
+        </thead>
+        <tbody>
+            @{
+                for (int i = 0; i < @Model.modules.Count(); i++)
+                {
+
+                    <tr>
+                        <th scope="row"><a href="@Url.Action("ModulePage", "Modules", new { ModuleTitle = @Model.modules[i].Title })">@Model.modules[i].Title</a></th>
+                        <td>5/20</td>
+                        <td>Both</td>
+                        @{
+                            foreach (var moduleProgress in @Model.progress[i])
+                            {
+                                <td>
+
+                                    <div class="dropdown">
+                                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                                        <div id="myDropdown" class="dropdown-content">
+                                            <button onclick="changeText(this)" value=""></button>
+                                            <button onclick="changeText(this)" href="" value="Reject">Reject</button>
+                                            <button type="button" onclick="changeText(this)" href="" value="Approve">Approve</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            }
+                        }
+
+                    </tr>
+
+                }
+            }
+
+
+        </tbody>
+    </table>
+</div>

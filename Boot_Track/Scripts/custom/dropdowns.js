@@ -6,6 +6,8 @@
 function changeText(option) {
     if (option.innerText === 'Submit for Review') {
         option.parentNode.parentNode.querySelector('.dropbtn').innerText = 'Under Review';
+    } else if (option.innerText === 'Approve') {
+        option.parentNode.parentNode.querySelector('.dropbtn').innerText = 'Completed';
     } else {
         option.parentNode.parentNode.querySelector('.dropbtn').innerText = option.innerText;
     }
@@ -15,6 +17,10 @@ function changeText(option) {
     } else if (option.innerText === 'Submit for Review') {
         option.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#FFA7A7';
         option.parentNode.parentNode.querySelector('.dropbtn').style.fontSize = "9px";
+    } else if (option.innerText === 'Reject') {
+        option.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#FFA7A7';
+    } else if (option.innerText === 'Approve') {
+        option.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#99EAB9';
     } else {
         option.parentNode.parentNode.querySelector('.dropbtn').style.backgroundColor = '#E5E5E5';
     }
