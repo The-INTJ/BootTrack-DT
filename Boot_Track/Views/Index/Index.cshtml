@@ -1,5 +1,4 @@
-﻿@using Boot_Track.Models
-@model Boot_Track.Models.Session
+﻿@model Boot_Track.Models.Session
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -64,7 +63,10 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Send for Review</button>
+                @using (Html.BeginForm("SendEmail", "Index")) {
+                    <input type = "submit" class="btn btn-danger" value="Send for Review" @*onclick='window.location.href ="/Modules/ModulePage"'*@/>
+                } 
+                
             </div>
 
         </div>
@@ -120,7 +122,7 @@
         foreach(var module in @Model.modules){
 
     <tr>
-        <th scope="row">@Html.ActionLink(module.Title, "ModulePage", "Modules", module.Title, new {})</th>
+        <th scope="row"><a href="@Url.Action("ModulePage", "Modules", new { ModuleTitle = module.Title })">@module.Title</a></th>
         <td>5/20</td>
         <td>Both</td>
         <td>

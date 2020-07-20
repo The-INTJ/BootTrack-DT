@@ -148,7 +148,7 @@ namespace Boot_Track.Models
             mod2.Comments = new object[,]
             {
                 { "Alex", "Fork" },
-                { "Henry", "I suck at smash" },
+                { "Henry", "I'm good at smash" },
             };
             _modules.Add(mod2);
 

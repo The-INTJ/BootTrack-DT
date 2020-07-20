@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,15 +11,17 @@ namespace Boot_Track.Controllers
     public class ModulesController : Controller
     {
         // GET: Modules
-        public ActionResult ModulePage(HttpContext context)
+        [Route("Modules/ModulePage/{ModuleTitle}")]
+        public ActionResult ModulePage(string ModuleTitle)
         {
+            Debug.WriteLine(ModuleTitle);
             var sesh = new Session();
             sesh.GetModules();
             foreach (var module in sesh.modules)
             {
-                if (module.Title != ModuleTitle)
+                Debug.WriteLine(module.Title);
+                if (module.Title == ModuleTitle)
                 {
-                    module.Title = (module.Title == ModuleTitle);
                     return View(module);
                 }
             }
