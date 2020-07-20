@@ -10,7 +10,7 @@ namespace Boot_Track.Controllers
     public class ModulesController : Controller
     {
         // GET: Modules
-        public ActionResult ModulePage(HttpContext context)
+        public ActionResult ModulePage(String ModuleTitle)
         {
             var sesh = new Session();
             sesh.GetModules();
@@ -18,7 +18,7 @@ namespace Boot_Track.Controllers
             {
                 if (module.Title != ModuleTitle)
                 {
-                    module.Title = (module.Title == ModuleTitle);
+                   
                     return View(module);
                 }
             }
