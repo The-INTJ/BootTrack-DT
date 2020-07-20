@@ -16,6 +16,8 @@ namespace Boot_Track.Models
 
         public List<List<Progress>> progress;
 
+        public List<Module> modules = new List<Module>();
+
         public void GetProgress()
         {
             if (Database.GetProgress() == null)
@@ -37,6 +39,20 @@ namespace Boot_Track.Models
             else
             {
                 interns = Database.GetInterns();
+            }
+        }
+
+        public void GetModules()
+        {
+            if (Database.GetModules() == null)
+            {
+                Database.InitModules();
+                modules = Database.GetModules();
+            }
+            else
+            {
+                Database.InitModules();
+                modules = Database.GetModules();
             }
         }
     }

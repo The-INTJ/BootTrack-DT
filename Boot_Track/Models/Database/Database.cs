@@ -116,10 +116,10 @@ namespace Boot_Track.Models
         /// Sets module paramaters
         /// _modules just holds the list of modules
 
-        private static List<Models.Module> _modules;
+        private static List<Models.Module> _modules = new List<Module>();
         //= GetModules();
 
-        private static List<Models.Module> GetModules()
+        public static void InitModules()
         {
             var modList = new List<Module>();
             Module mod = new Module();
@@ -135,8 +135,12 @@ namespace Boot_Track.Models
                     { "Drew", "VS CODE IS BETTER"}, 
                 };
             mod.completionDate = new DateTime(2020, 7, 17);
-            modList.Add(mod);
-            return modList;
+            _modules.Add(mod);
+        }
+
+        public static List<Models.Module> GetModules()
+        {
+            return _modules;
         }
 
         /// This is a method that creates the intern table
