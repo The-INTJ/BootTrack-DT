@@ -1,4 +1,5 @@
-﻿
+﻿@using Boot_Track.Models
+@model Boot_Track.Models.Module
 @{
     ViewBag.Title = "ModulePage";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,36 +10,152 @@
 <h2>ModulePage</h2>
 
 <div class="Container">
-    <p style="padding-left:20px;">@Html.ActionLink("Home", "Index", "Index") > [Insert Module Name]</p>
+    <p style="padding-left:20px;">@Html.ActionLink("Home", "Index", "Index") > @Model.Title </p>
 
-    <h1>Development Tools</h1>
+    <h1>@Model.Title</h1>
     <div class="Overview-CheckList">
         <div class="Overview">
-            <p class="Overview-P">Overview</p>
+            <p class="Overview-P-Bold">Overview</p>
             <hr style="margin-top: 0;" />
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p class="Overview-P">
+                @Model.Overview
             </p>
+            <p class="Overview-P-Bold">Module SMEs</p>
+            <hr style="margin-top: 0;" />
+            <div class="Module-SMEs">
+                @* Generate as many as we get from list; Rn Hardcoded *@
+                @foreach(var sme in @Model.SMEs) {
+                <div class="SME">
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
+                    </svg>
+                    <p>@sme</p>
+                </div>
+                }
+            </div>
         </div>
         <div class="CheckList">
-            <p class="CheckList-P">CheckList</p>
+            <p class="CheckList-P-Bold">CheckList</p>
             <hr style="margin-top: 0;" />
             <div class="Exercises">
-                <p>Exercise 1<img id="Unchecked" src="~/Images/square.svg" /></p>
-                
+                @foreach (var exercise in @Model.Checklist)
+                {
+                    <p>@exercise<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
+                }
+                <p>Ready for Review<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    $(document).ready(function () {
-        $("img").click(function () {
-            $(this).attr("src")
-        })
-    })
-</script>
+    <div class="Card">
+        <p class="Module-Dashboard-P-Bold" style="text-align:center;">Module Dashboard</p>
+        <hr />
+        <div style="display: inline-block; padding-left: 20%; width: 100%;">
+            <input type="text" placeholder="Filter by colleague name..." />
+            <span style="padding-left: 10%;"><img id="Unchecked" src="~/Images/square.svg"> Hide Completed</span>
+            <span style="padding-left: 10%;"><img id="Unchecked" src="~/Images/square.svg"> Under Review</span>
+        </div>
+        <div class="Dash-Headers">
+            <h4>Colleague</h4>
+            <h4>Module Status</h4>
+            <h4>Completion Date</h4>
+        </div>
+        <div class="Dash-Camper">
+            <div class="Camper" style="display:flex;">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
+                </svg>
+                <p style="padding-top: 14%; padding-left: 3%; ">[Insert Camper Here]</p>
+            </div>
+            <div class="Progress-Bar-Nonbootstrap" style="width:30%;">
+                <h6>In Progress</h6>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                </div>
+                <div class="Below-Progress">
+                    <h6>25%</h6>
+                    <h6>Tasks 1/4</h6>
+                </div>
+            </div>
+            <h5 style="padding-top: 35px;">@Model.completionDate</h5>
+        </div>
+        <div class="Dash-Camper">
+            <div class="Camper" style="display:flex;">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
+                </svg>
+                <p style="padding-top: 14%; padding-left: 3%; ">[Insert Camper Here]</p>
+            </div>
+            <div class="Progress-Bar-Nonbootstrap" style="width:30%;">
+                <h6>Under Review</h6>
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">99%</div>
+                </div>
+                <div class="Below-Progress">
+                    <h6>99%</h6>
+                    <h6>Tasks 4/4</h6>
+                </div>
+            </div>
+            <h5 style="padding-top: 35px;">@Model.completionDate</h5>
+        </div>
+        <div class="Dash-Camper">
+            <div class="Camper" style="display:flex;">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
+                </svg>
+                <p style="padding-top: 14%; padding-left: 3%; ">[Insert Camper Here]</p>
+            </div>
+            <div class="Progress-Bar-Nonbootstrap" style="width:30%;">
+                <h6>Completed</h6>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+                <div class="Below-Progress">
+                    <h6>100%</h6>
+                    <h6>Task 4/4</h6>
+                </div>
+            </div>
+            <h5 style="padding-top: 35px;">@Model.completionDate</h5>
+        </div>
+    </div>
+
+    <div class="Card">
+        <p class="Module-Rating-P-Bold">Module Rating</p>
+        <hr />
+        <div class="Dropdown-Bars">
+            <div class="Rating-Dropdown">
+                <h5 style="padding-left: 8%">Rate this module:</h5>
+                <div class="dropdown">
+                    <button onclick="toggleShow(this)" class="dropbtn"></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button onclick="changeText(this)" value="Amazing">Amazing</button>
+                        <button onclick="changeText(this)" href="" value="Okay">Okay</button>
+                        <button onclick="changeText(this)" href="" value="Unhelpful">Unhelpful</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="Rating-Bars">
+                <div class="Rating-Bar">
+                    <h5>Amazing</h5>
+                    <div id="Amazing" class="progress" style="width: 150px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                    </div>
+                </div>
+                <div class="Rating-Bar">
+                    <h5>Okay</h5>
+                    <div id="Okay" class="progress" style="width: 150px;">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                    </div>
+                </div>
+                <div class="Rating-Bar">
+                    <h5>Unhelpful</h5>
+                    <div id="Unhelpful" class="progress" style="width: 150px;">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Submit" style="margin-left: 4%;" />
+    </div>
+</div>

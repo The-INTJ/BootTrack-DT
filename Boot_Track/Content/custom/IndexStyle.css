@@ -9,8 +9,8 @@ h2 {
 
 .Container {
     display: block;
-    margin-left: 10%;
-    margin-right: 10%;
+    /*margin-left: 10%;
+    margin-right: 10%;*/
 }
 
 .Filter-Container {
@@ -29,11 +29,67 @@ h2 {
     margin-right: 40%;
 }
 
+.Rows {
+    display: flex;
+    flex-direction: column;
+}
+
 .Row1 {
-    flex: auto;
+    padding-bottom: 15px;
 }
 
 .Row2 {
-    flex: auto;
+    
 }
 
+#Check-To-Pad {
+
+}
+
+/* Dropdowns */
+.dropbtn {
+    width: 75px;
+    height: 30px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    background-color: #E5E5E5;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: absolute;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+    min-width: 150px;
+    min-height: 25px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background-color: #E5E5E5;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+.CCs-GSGs {
+    display: flex;
+    flex-direction: row;
+}
+
+.CC-GSG {
+    display: inline-block;
+    width: 30%;
+    margin-right: 5px;
+}
+
+button {
+    font-size: 12px;
+}
