@@ -26,12 +26,12 @@
             <div class="Module-SMEs">
                 @* Generate as many as we get from list; Rn Hardcoded *@
                 @foreach(var sme in @Model.CurrModule.SMEs) {
-                <div class="SME">
-                    <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
-                    </svg>
-                    <p>@sme</p>
-                </div>
+                    <div class="SME">
+                        <svg height="100" width="100">
+                            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
+                        </svg>
+                        <p>@sme</p>
+                    </div>
                 }
             </div>
         </div>
