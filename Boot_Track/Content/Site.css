@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 150px;
     padding-bottom: 20px;
+    background: #F8F8F8;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -71,7 +72,7 @@ h2 {
 }
 
 h1 {
-    color: darkred;
+    color: #8D0E11;
     font-weight: bold;
 }
 
@@ -83,3 +84,7 @@ a {
         color: #E61717;
         text-decoration: none;
     }
+
+hr {
+    border: 1px solid #8D0E11;
+}

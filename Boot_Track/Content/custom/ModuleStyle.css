@@ -14,7 +14,7 @@ h1, h2 {
 .orient {
     margin-top: 3.8%;
     padding: 25px 10px 15px 15px;
-    background: #E5E5E5;
+    background: #E8E8E8;
     border-radius: 10px;
     /*display: flex;
     flex-direction: column;
@@ -30,17 +30,26 @@ h1, h2 {
 }
 
 .Overview {
-    background: #E5E5E5;
+    background: #E8E8E8;
     width: 64%;
     padding: 15px;
     border-radius: 10px;
 }
 
 .CheckList {
-    background: #E5E5E5;
+    background: #E8E8E8;
     width: 32%;
     padding: 15px;
     border-radius: 10px;
+}
+
+.inp-chkbx {
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.chkbx-spacing {
+    padding: 0 0 10px 10px;
 }
 
 .P-Bold {
@@ -67,11 +76,6 @@ h1, h2 {
     padding-left: 80px;
 }
 
-hr {
-    margin-right: 5%;
-    
-}
-
 .Exercises {
     display: inline-block;
     width: 100%;
@@ -89,7 +93,7 @@ hr {
 }
 
 .Card {
-    background: #E5E5E5;
+    background: #E8E8E8;
     margin: 40px 10% 0 10%; /*top right bottom left aka clockwise*/
     padding-bottom: 20px;
     width: 100%;
@@ -100,8 +104,7 @@ hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
-    margin: 25px 10% 0 10%; /*top right bottom left aka clockwise*/
+    margin: 15px 5% 0 5%; /*top right bottom left aka clockwise*/
     padding: 20px 10px 20px 10px;
 }
 
@@ -111,8 +114,7 @@ hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
-    margin: 0 10% 12px 10%; /*top right bottom left aka clockwise*/
+    margin: 0 5% 12px 5%; /*top right bottom left aka clockwise*/
     padding: 20px 10px 20px 10px;
 }
 
