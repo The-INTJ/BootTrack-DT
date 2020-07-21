@@ -112,6 +112,21 @@ namespace Boot_Track.Models
             }
         }
 
+        public static Progress GetProgress(Intern internParam, Module moduleParam)
+        {
+            for (int i = 0; i < _internsTable.Count(); i++)
+            {
+                for (int j = 0; j < _modules.Count(); j++)
+                {
+                    if ((_progressTable[i][j].intern.ActiveKey == internParam.ActiveKey) && (_progressTable[i][j].module.Title.Equals(moduleParam.Title)))
+                    {
+                        return _progressTable[i][j];
+                    }
+                }
+            }
+            return _progressTable[0][0];
+        }
+
         /// This is a method that creates the module tables
         /// and populates it with the module values, but might have to
         /// be hard coded
@@ -201,9 +216,16 @@ namespace Boot_Track.Models
             Login henrySignIn = new Login
             {
                 Username = "henry.faulkner",
-                Password = "henryPass"
+                Password = "henryPass",
+                IsAdmin = false
             };
             _LoginTable.Add(henrySignIn);
+
+            Login adminSignin = new Login {
+                Username = "admin.admin",
+                Password = "admin",
+                IsAdmin = true
+            };       
         }
 
         public static List<Models.Login> GetLogins()

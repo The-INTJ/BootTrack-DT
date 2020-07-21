@@ -38,6 +38,12 @@ namespace Boot_Track.Controllers
                     passCookie.Value = user.Password;
                     HttpContext.Response.Cookies.Add(passCookie);
 
+                    HttpCookie adminCookie = new HttpCookie("Admin");
+                    if (user.IsAdmin == true)
+                        adminCookie.Value = "True";
+                    HttpContext.Response.Cookies.Add(adminCookie);
+                       
+
                     return Redirect("/Index/Index");
                 }
             }
