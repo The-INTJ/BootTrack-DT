@@ -156,6 +156,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\black-ball-point-pen-with-brown-spiral-notebook-733852.jpg" />
+    <Content Include="Images\Boot Track Logo.png" />
     <Content Include="Images\BootTrack-Logo.png" />
     <Content Include="Images\check-square.svg" />
     <Content Include="Images\Grey-Logo.PNG" />

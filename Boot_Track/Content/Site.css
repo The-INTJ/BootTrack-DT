@@ -33,11 +33,11 @@ ul {
 }
 
 .Title-Link {
-    color: #FFFFFF;
+    color: #000000;
     font-size: 36px;
 }
 
 .Title-Link:hover {
     text-decoration: none;
-    color: #e9ecef;
+    color: #0c87e1;
 }

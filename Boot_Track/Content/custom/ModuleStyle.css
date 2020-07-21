@@ -103,6 +103,9 @@ hr {
 
 .Progress-Bar-Nonbootstrap {
     padding-top: 20px;
+    position: absolute;
+    left: 40%;
+    width: 20%;
 }
 
 .Below-Progress h6:first-of-type {

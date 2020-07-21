@@ -96,9 +96,7 @@
             </div>
         </div>
     </div>
-
-
-
+        
     <table class="table">
         <thead class="thead-light">
             <tr>
@@ -120,7 +118,7 @@
         </thead>
         <tbody>
             @{
-                for (int i = 0; i<@Model.modules.Count(); i++)
+                for (int i = 0; i < @Model.modules.Count(); i++)
                 {
 
                     <tr>
@@ -130,20 +128,20 @@
                         @{
                             foreach (var moduleProgress in @Model.progress[i])
                             {
-                                
 
-                                    <td>
-                                        
-                                        <div class="dropdown">
-                                            <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                            <div id="myDropdown" class="dropdown-content">
-                                                <button onclick="changeText(this)" value=""></button>
-                                                <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                                <button type="button" onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                            </div>
+
+                                <td>
+
+                                    <div class="dropdown">
+                                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                                        <div id="myDropdown" class="dropdown-content">
+                                            <button onclick="changeText(this)" value=""></button>
+                                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                                            <button type="button" onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
                                         </div>
-                                    </td>
-                                
+                                    </div>
+                                </td>
+
                             }
                         }
 

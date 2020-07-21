@@ -4,7 +4,7 @@ body {
 
 h2 {
     text-align: center;
-    color: #0c87e1;
+    color: #E41E26;
 }
 
 .Container {
@@ -16,8 +16,7 @@ h2 {
 .Filter-Container {
     display: flex;
     flex-direction: row;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 15px 5% 15px 5%;
 }
 
 /*.Head-Search {
