@@ -5,8 +5,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -40,4 +40,9 @@ ul {
 .Title-Link:hover {
     text-decoration: none;
     color: #e9ecef;
+}
+
+h2 {
+    color: darkred;
+    font-weight: bold;
 }
