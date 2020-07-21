@@ -12,10 +12,10 @@ h1, h2 {
 }
 
 .orient {
-    margin-top: 2%;
-    padding: 25px 10px 0 0;
+    margin-top: 3.8%;
+    padding: 25px 10px 15px 15px;
     background: #E5E5E5;
-
+    border-radius: 10px;
     /*display: flex;
     flex-direction: column;
     background: #E5E5E5;
@@ -31,22 +31,22 @@ h1, h2 {
 
 .Overview {
     background: #E5E5E5;
-    width: 65%;
-    padding-left: 5px;
-    padding-right: 5px;
+    width: 64%;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .CheckList {
     background: #E5E5E5;
-    width: 33%;
-    padding-left: 5px;
-    padding-right: 5px;
+    width: 32%;
+    padding: 15px;
+    border-radius: 10px;
 }
 
-.Overview-P-Bold, .CheckList-P-Bold, .Module-Dashboard-P-Bold, .Module-Rating-P-Bold {
+.P-Bold {
+    margin-left: 2%;
     font-weight: bold;
     font-size: 24px;
-    margin-left: 7%;
     margin-bottom: 0;
     padding-top: 3px;
 }
@@ -69,7 +69,7 @@ h1, h2 {
 
 hr {
     margin-right: 5%;
-    margin-left: 5%;
+    
 }
 
 .Exercises {
@@ -97,17 +97,17 @@ hr {
 }
 
 .Dash-Headers {
-    background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 80%;
-    margin: 25px 10% 12px 10%; /*top right bottom left aka clockwise*/
+    margin: 25px 10% 0 10%; /*top right bottom left aka clockwise*/
     padding: 20px 10px 20px 10px;
 }
 
 .Dash-Camper {
-    background-color: #ffffff;
+    background: radial-gradient( #E5E5E5, white );
+    border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -183,8 +183,4 @@ hr {
 
 .Rating-Bar {
     display: flex;
-}
-
-.hr-primary {
-    background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), rgba(66, 133, 244,.6), rgba(0,0,0,0));
 }
