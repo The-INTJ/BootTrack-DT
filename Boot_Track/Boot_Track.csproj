@@ -158,8 +158,17 @@
     <Content Include="Images\black-ball-point-pen-with-brown-spiral-notebook-733852.jpg" />
     <Content Include="Images\BootTrack-Logo.png" />
     <Content Include="Images\check-square.svg" />
+    <Content Include="Images\craig-trulove.jfif" />
+    <Content Include="Images\george-chang.jfif" />
     <Content Include="Images\Grey-Logo.PNG" />
+    <Content Include="Images\michael-buckman.jfif" />
+    <Content Include="Images\michael-yao.jfif" />
+    <Content Include="Images\nick-sturdivant.jfif" />
+    <Content Include="Images\perf-perf.jpg" />
+    <Content Include="Images\ravind-budhiraja.jfif" />
+    <Content Include="Images\ron-jones.jfif" />
     <Content Include="Images\square.svg" />
+    <Content Include="Images\zach-gay.JPG" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\bootstrap.js" />

@@ -65,9 +65,9 @@ namespace Boot_Track.Models
 
         public static void SetProgressChecklist(Intern internParam, Module moduleParam, int num, bool state)
         {
-            for (int i = 0; i < _internsTable.Count(); i++)
+            for (int i = 0; i < _modules.Count(); i++)
             {
-                for (int j = 0; j < _modules.Count(); j++)
+                for (int j = 0; j < _internsTable.Count(); j++)
                 {
                     if ((_progressTable[i][j].intern.ActiveKey == internParam.ActiveKey) && (_progressTable[i][j].module.Title.Equals(moduleParam.Title)))
                     {
@@ -79,9 +79,9 @@ namespace Boot_Track.Models
 
         public static bool GetProgressChecklist(Intern internParam, Module moduleParam, int num)
         {
-            for (int i = 0; i < _internsTable.Count(); i++)
+            for (int i = 0; i < _modules.Count(); i++)
             {
-                for (int j = 0; j < _modules.Count(); j++)
+                for (int j = 0; j < _internsTable.Count(); j++)
                 {
                     if ((_progressTable[i][j].intern.ActiveKey == internParam.ActiveKey) && (_progressTable[i][j].module.Title.Equals(moduleParam.Title)))
                     {
@@ -100,9 +100,9 @@ namespace Boot_Track.Models
         
         public static void SetProgress(Intern internParam, Module moduleParam, int progressParam)
         {
-            for (int i = 0; i < _internsTable.Count(); i++)
+            for (int i = 0; i < _modules.Count(); i++)
             {
-                for (int j = 0; j < _modules.Count(); j++)
+                for (int j = 0; j < _internsTable.Count(); j++)
                 {
                     if ((_progressTable[i][j].intern.ActiveKey == internParam.ActiveKey) && (_progressTable[i][j].module.Title.Equals(moduleParam.Title)))
                     {
@@ -114,9 +114,9 @@ namespace Boot_Track.Models
 
         public static Progress GetProgress(Intern internParam, Module moduleParam)
         {
-            for (int i = 0; i < _internsTable.Count(); i++)
+            for (int i = 0; i < _modules.Count(); i++)
             {
-                for (int j = 0; j < _modules.Count(); j++)
+                for (int j = 0; j < _internsTable.Count(); j++)
                 {
                     if ((_progressTable[i][j].intern.ActiveKey == internParam.ActiveKey) && (_progressTable[i][j].module.Title.Equals(moduleParam.Title)))
                     {
