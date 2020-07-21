@@ -16,9 +16,26 @@ namespace Boot_Track.Controllers
         // Logic for parsing session object, null check (return error if failed), return view with session object
         public ActionResult Index()
         {
+            if (HttpContext.Request.Cookies["IsLoggedIn"] == null)
+            {
+                return Redirect("/Login/Index");
+            }
+
             var sesh = new Session();
             sesh.GetModules();
             sesh.GetInterns();
+            sesh.GetProgress();
+
+            return View(sesh);
+        }
+
+        public ActionResult AdminIndex()
+        {
+            var sesh = new Session();
+            sesh.GetModules();
+            sesh.GetInterns();
+            sesh.GetProgress();
+
             return View(sesh);
         }
 

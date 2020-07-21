@@ -1,5 +1,5 @@
 ﻿@using Boot_Track.Models
-@model Boot_Track.Models.Module
+@model Boot_Track.Models.Session
 @{
     ViewBag.Title = "ModulePage";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,38 +7,39 @@
 
 <link href="~/Content/custom/ModuleStyle.css" rel="stylesheet" type="text/css" />
 
-<h2>ModulePage</h2>
+<p style="padding-left:20px;">@Html.ActionLink("Home", "Index", "Index") / <b>@Model.CurrModule.Title</b> </p>
 
-<div class="Container">
-    <p style="padding-left:20px;">@Html.ActionLink("Home", "Index", "Index") > @Model.Title </p>
+<h1>@Model.CurrModule.Title</h1>
+<hr/>
 
-    <h1>@Model.Title</h1>
+<div class="Container-M">
+
     <div class="Overview-CheckList">
         <div class="Overview">
-            <p class="Overview-P-Bold">Overview</p>
-            <hr style="margin-top: 0;" />
+            <p class="P-Bold">Overview</p>
+            <hr />
             <p class="Overview-P">
-                @Model.Overview
+                @Model.CurrModule.Overview
             </p>
-            <p class="Overview-P-Bold">Module SMEs</p>
-            <hr style="margin-top: 0;" />
+            <p class="P-Bold">Module SMEs</p>
+            <hr />
             <div class="Module-SMEs">
                 @* Generate as many as we get from list; Rn Hardcoded *@
-                @foreach(var sme in @Model.SMEs) {
-                <div class="SME">
-                    <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
-                    </svg>
-                    <p>@sme</p>
-                </div>
+                @foreach(var sme in @Model.CurrModule.SMEs) {
+                    <div class="SME">
+                        <svg height="100" width="100">
+                            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
+                        </svg>
+                        <p>@sme</p>
+                    </div>
                 }
             </div>
         </div>
         <div class="CheckList">
-            <p class="CheckList-P-Bold">CheckList</p>
-            <hr style="margin-top: 0;" />
+            <p class="P-Bold">CheckList</p>
+            <hr />
             <div class="Exercises">
-                @foreach (var exercise in @Model.Checklist)
+                @foreach (var exercise in @Model.CurrModule.Checklist)
                 {
                     <p>@exercise<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
                 }
@@ -47,115 +48,58 @@
         </div>
     </div>
 
-    <div class="Card">
-        <p class="Module-Dashboard-P-Bold" style="text-align:center;">Module Dashboard</p>
+    <div class="orient">
+        <p class="P-Bold">Module Dashboard</p>
         <hr />
-        <div style="display: inline-block; padding-left: 20%; width: 100%;">
+        <div class="inp-chkbx">
             <input type="text" placeholder="Filter by colleague name..." />
-            <span style="padding-left: 10%;"><img id="Unchecked" src="~/Images/square.svg"> Hide Completed</span>
-            <span style="padding-left: 10%;"><img id="Unchecked" src="~/Images/square.svg"> Under Review</span>
+            <span class="chkbx-spacing"><img id="Unchecked" src="~/Images/square.svg"> Hide Completed</span>
+            <span class="chkbx-spacing"><img id="Unchecked" src="~/Images/square.svg"> Under Review</span>
         </div>
         <div class="Dash-Headers">
-            <h4>Colleague</h4>
-            <h4>Module Status</h4>
-            <h4>Completion Date</h4>
+            <div>
+                <h4>Colleague</h4>
+                <hr />
+            </div>
+            <div style="margin-left: 6%;">
+                <h4>Module Status</h4>
+                <hr />
+            </div>
+            <div>
+                <h4>Completion Date</h4>
+                <hr />
+            </div>
+
         </div>
-        <div class="Dash-Camper">
-            <div class="Camper" style="display:flex;">
-                <svg height="100" width="100">
-                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
-                </svg>
-                <p style="padding-top: 14%; padding-left: 3%; ">[Insert Camper Here]</p>
-            </div>
-            <div class="Progress-Bar-Nonbootstrap" style="width:30%;">
-                <h6>In Progress</h6>
-                <div class="progress">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <div class="Below-Progress">
-                    <h6>25%</h6>
-                    <h6>Tasks 1/4</h6>
-                </div>
-            </div>
-            <h5 style="padding-top: 35px;">[Insert Completion Date]</h5>
-        </div>
-        <div class="Dash-Camper">
-            <div class="Camper" style="display:flex;">
-                <svg height="100" width="100">
-                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
-                </svg>
-                <p style="padding-top: 14%; padding-left: 3%; ">[Insert Camper Here]</p>
-            </div>
-            <div class="Progress-Bar-Nonbootstrap" style="width:30%;">
-                <h6>Under Review</h6>
-                <div class="progress">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">99%</div>
-                </div>
-                <div class="Below-Progress">
-                    <h6>99%</h6>
-                    <h6>Tasks 4/4</h6>
-                </div>
-            </div>
-            <h5 style="padding-top: 35px;">[Insert Completion Date]</h5>
-        </div>
-        <div class="Dash-Camper">
-            <div class="Camper" style="display:flex;">
-                <svg height="100" width="100">
-                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
-                </svg>
-                <p style="padding-top: 14%; padding-left: 3%; ">[Insert Camper Here]</p>
-            </div>
-            <div class="Progress-Bar-Nonbootstrap" style="width:30%;">
-                <h6>Completed</h6>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                </div>
-                <div class="Below-Progress">
-                    <h6>100%</h6>
-                    <h6>Task 4/4</h6>
-                </div>
-            </div>
-            <h5 style="padding-top: 35px;">[Insert Completion Date]</h5>
-        </div>
+
+        @foreach (var camperEntry in @Model.progress)
+        {
+            if (camperEntry[0].module.Title == @Model.CurrModule.Title)
+            {
+                foreach (var camper in camperEntry)
+                {
+                    <div class="Dash-Camper">
+                        <div class="Camper" style="display: flex;">
+                            <svg height="100" width="100">
+                                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
+                            </svg>
+                            <p style="padding-top: 14%; padding-left: 3%;">@camper.intern.FirstName @camper.intern.LastName</p>
+                        </div>
+                        <div class="Progress-Bar-Nonbootstrap">
+                            <h6>In Progress</h6>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                            <div class="Below-Progress">
+                                <h6>25%</h6>
+                                <h6>Tasks 1/4</h6>
+                            </div>
+                        </div>
+                        <h5 style="padding-top: 35px;">@Model.CurrModule.completionDate</h5>
+                    </div>
+                }
+            }
+        }
     </div>
 
-    <div class="Card">
-        <p class="Module-Rating-P-Bold">Module Rating</p>
-        <hr />
-        <div class="Dropdown-Bars">
-            <div class="Rating-Dropdown">
-                <h5 style="padding-left: 8%">Rate this module:</h5>
-                <div class="dropdown">
-                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <button onclick="changeText(this)" value="Amazing">Amazing</button>
-                        <button onclick="changeText(this)" href="" value="Okay">Okay</button>
-                        <button onclick="changeText(this)" href="" value="Unhelpful">Unhelpful</button>
-                    </div>
-                </div>
-
-            </div>
-            <div class="Rating-Bars">
-                <div class="Rating-Bar">
-                    <h5>Amazing</h5>
-                    <div id="Amazing" class="progress" style="width: 150px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                    </div>
-                </div>
-                <div class="Rating-Bar">
-                    <h5>Okay</h5>
-                    <div id="Okay" class="progress" style="width: 150px;">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                    </div>
-                </div>
-                <div class="Rating-Bar">
-                    <h5>Unhelpful</h5>
-                    <div id="Unhelpful" class="progress" style="width: 150px;">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <input type="submit" value="Submit" style="margin-left: 4%;" />
-    </div>
 </div>

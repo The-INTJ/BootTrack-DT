@@ -1,12 +1,13 @@
 ﻿body {
     padding-top: 150px;
     padding-bottom: 20px;
+    background: #F8F8F8;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,7 +22,30 @@ input,
 select,
 textarea {
     max-width: 280px;
+    border-radius: 15px;
+    border-color: #8C734B;
+    padding: 5px;
 }
+
+    input:hover,
+    select:hover,
+    textarea:hover {
+        outline: none;
+        max-width: 280px;
+        border-radius: 15px;
+        border-color: #8D0E11;
+        padding: 5px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        max-width: 280px;
+        border-radius: 15px;
+        border-color: #E61717;
+        padding: 5px;
+    }
 
 ul {
     list-style: none;
@@ -37,7 +61,30 @@ ul {
     font-size: 36px;
 }
 
-.Title-Link:hover {
-    text-decoration: none;
-    color: #e9ecef;
+    .Title-Link:hover {
+        text-decoration: none;
+        color: #8C734B;
+    }
+
+h2 {
+    color: #8D0E11;
+    font-weight: bold;
+}
+
+h1 {
+    color: #8D0E11;
+    font-weight: bold;
+}
+
+a {
+    color: #81A7BB;
+}
+
+    a:hover {
+        color: #8C734B;
+        text-decoration: none;
+    }
+
+hr {
+    border: 1px solid #81A7BB;
 }
