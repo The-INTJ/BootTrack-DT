@@ -13,10 +13,10 @@
             <p class="sign" align="center">Sign in</p>
             <br/>
             <form class="form1" />
-            @Html.TextBoxFor(m => m.Username, new { @class = "un", @type = "text", @align = "center", @placeholder = "Username" })
+            @Html.TextBoxFor(m => m.Username, new { @id="Username", @class = "un", @type = "text", @align = "center", @placeholder = "Username" })
             <br/>
             <br/>
-            @Html.TextBoxFor(m => m.Password, new { @class = "un", @type = "text", @align = "center", @placeholder = "Password" })
+            @Html.TextBoxFor(m => m.Password, new { @id="Password", @class = "un", @type = "text", @align = "center", @placeholder = "Password" })
             <br/>
             <br/>
             <input class="submit" type="submit" placeholder="Sign In" />

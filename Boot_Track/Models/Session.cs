@@ -18,7 +18,11 @@ namespace Boot_Track.Models
 
         public List<Module> modules = new List<Module>();
 
+        public List<Login> logins = new List<Login>();
+
         public Email email = new Email();
+
+        public Module CurrModule = new Module();
 
         public void GetProgress()
         {
@@ -58,6 +62,29 @@ namespace Boot_Track.Models
                 //Database.InitModules();
                 modules = Database.GetModules();
             }
+        }
+
+        public void GetLogins()
+        {
+            if (!Database.GetLogins().Any())
+            {
+                Database.InitLogin();
+                logins = Database.GetLogins();
+            }
+            else
+            {
+                logins = Database.GetLogins();
+            }
+        }
+
+        public void SetProgressChecklist(Intern internParam, Module moduleParam, int num, bool state)
+        {
+            Database.SetProgressChecklist(internParam, moduleParam, num, state);
+        }
+
+        public bool GetProgressChecklist(Intern internParam, Module moduleParam, int num, bool state)
+        {
+            return Database.GetProgressChecklist(internParam, moduleParam, num);
         }
     }
 }
