@@ -84,5 +84,10 @@ namespace Boot_Track.Models
         {
             return Database.GetProgressChecklist(internParam, moduleParam, num);
         }
+
+        public Progress GetProgress(Intern internParam, Module moduleParam)
+        {
+            return Database.GetProgress(internParam, moduleParam);
+        }
     }
 }
