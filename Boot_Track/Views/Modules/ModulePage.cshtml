@@ -24,7 +24,7 @@
             <hr style="margin-top: 0;" />
             <div class="Module-SMEs">
                 @* Generate as many as we get from list; Rn Hardcoded *@
-                @foreach(var sme in @Model.CurrModule.SMEs) {
+                @foreach (var sme in @Model.CurrModule.SMEs) {
                 <div class="SME">
                     <svg height="100" width="100">
                         <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
@@ -38,10 +38,13 @@
             <p class="CheckList-P-Bold">CheckList</p>
             <hr style="margin-top: 0;" />
             <div class="Exercises">
-                @foreach (var exercise in @Model.CurrModule.Checklist)
-                {
-                    <p>@exercise<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
+                @{
+                    for (int i = 0; i < @Model.CurrModule.Checklist.Length; i++)
+                    {                  
+                        <p>@Model.CurrModule.Checklist[i]<img class="Exercise-Img" id="Checked" src="~/Images/check-square.svg" onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i });'"/></p>
+                    }
                 }
+
                 <p>Ready for Review<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
             </div>
         </div>
@@ -90,44 +93,19 @@
             }
         }
     </div>
-
-    <div class="Card">
-        <p class="Module-Rating-P-Bold">Module Rating</p>
-        <hr />
-        <div class="Dropdown-Bars">
-            <div class="Rating-Dropdown">
-                <h5 style="padding-left: 8%">Rate this module:</h5>
-                <div class="dropdown">
-                    <button onclick="toggleShow(this)" class="dropbtn"></button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <button onclick="changeText(this)" value="Amazing">Amazing</button>
-                        <button onclick="changeText(this)" href="" value="Okay">Okay</button>
-                        <button onclick="changeText(this)" href="" value="Unhelpful">Unhelpful</button>
-                    </div>
-                </div>
-
-            </div>
-            <div class="Rating-Bars">
-                <div class="Rating-Bar">
-                    <h5>Amazing</h5>
-                    <div id="Amazing" class="progress" style="width: 150px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                    </div>
-                </div>
-                <div class="Rating-Bar">
-                    <h5>Okay</h5>
-                    <div id="Okay" class="progress" style="width: 150px;">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                    </div>
-                </div>
-                <div class="Rating-Bar">
-                    <h5>Unhelpful</h5>
-                    <div id="Unhelpful" class="progress" style="width: 150px;">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <input type="submit" value="Submit" style="margin-left: 4%;" />
-    </div>
 </div>
+
+<script>
+     $(document).ready(function () {
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+    })
+</script>

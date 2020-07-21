@@ -63,10 +63,10 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                @using (Html.BeginForm("SendEmail", "Index"))
-                {
+                @*@using (Html.BeginForm("SendEmail", "Index"))
+                {*@
                     <input type="submit" class="btn btn-danger" value="Send for Review" @*onclick='window.location.href ="/Modules/ModulePage"'*@ />
-                }
+                @* } *@
 
             </div>
 
@@ -128,10 +128,7 @@
                         @{
                             foreach (var moduleProgress in @Model.progress[i])
                             {
-
-
                                 <td>
-
                                     <div class="dropdown">
                                         <button onclick="toggleShow(this)" class="dropbtn"></button>
                                         <div id="myDropdown" class="dropdown-content">
@@ -141,7 +138,6 @@
                                         </div>
                                     </div>
                                 </td>
-
                             }
                         }
 
