@@ -159,8 +159,16 @@
     <Content Include="Images\Boot Track Logo.png" />
     <Content Include="Images\BootTrack-Logo.png" />
     <Content Include="Images\check-square.svg" />
+    <Content Include="Images\Interns\alex-karadsheh.png" />
+    <Content Include="Images\Interns\bela-colmanerez.jpg" />
+    <Content Include="Images\Interns\david-hwang.jpeg" />
     <Content Include="Images\Interns\drew-taylor.jpg" />
-    <Content Include="Images\Interns\henry-faulkner.jpg" />
+    <Content Include="Images\Interns\grayson-harden.jpg" />
+    <Content Include="Images\Interns\henry-faulkner.png" />
+    <Content Include="Images\Interns\kallie-kothran.jpg" />
+    <Content Include="Images\Interns\kam-ndirango.jpg" />
+    <Content Include="Images\Interns\mary-claire.jpg" />
+    <Content Include="Images\Interns\rebekah-williamson.jpg" />
     <Content Include="Images\smes\craig-trulove.jfif" />
     <Content Include="Images\smes\george-chang.jfif" />
     <Content Include="Images\Grey-Logo.PNG" />

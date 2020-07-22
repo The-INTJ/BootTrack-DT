@@ -151,9 +151,20 @@
                             System.Diagnostics.Debug.WriteLine(percentDone);
                         }
                         <div class="Camper" style="display: flex;">
-                            <svg height="100" width="100">
-                                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
-                            </svg>
+
+                            @{
+
+                                var fName = camper.intern.FirstName.ToLower();
+                                var lName = camper.intern.LastName.ToLower();
+                                var name = fName + "-" + lName;
+
+                                var imgPath = "/../../Images/Interns/" + name;
+
+                                <img class="sme-img" src="@imgPath" />
+                            }
+
+
+
                             <p style="padding-top: 14%; padding-left: 3%;">@camper.intern.FirstName @camper.intern.LastName</p>
                         </div>
                         <div class="Progress-Bar-Nonbootstrap">
