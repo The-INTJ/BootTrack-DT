@@ -88,3 +88,11 @@ a {
 hr {
     border: 1px solid #81A7BB;
 }
+
+.pfp-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #010101;
+}

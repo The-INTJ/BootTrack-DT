@@ -159,6 +159,8 @@
     <Content Include="Images\Boot Track Logo.png" />
     <Content Include="Images\BootTrack-Logo.png" />
     <Content Include="Images\check-square.svg" />
+    <Content Include="Images\Interns\drew-taylor.jpg" />
+    <Content Include="Images\Interns\henry-faulkner.jpg" />
     <Content Include="Images\smes\craig-trulove.jfif" />
     <Content Include="Images\smes\george-chang.jfif" />
     <Content Include="Images\Grey-Logo.PNG" />
