@@ -29,26 +29,21 @@
                     var name = sme;
                     name = name.ToLower();
                     name = name.Replace(' ', '-');
-                    var name2 = @"~/Images/" + name  + ".jfif";
-                    //var name3 = "<a href="~/ Images / michael - buckman.jfif">~/Images/michael-buckman.jfif</a>";
-                    //DirectoryInfo path = Server.MapPath(@"~\Chat\img");
 
-                    //var name4 = Server.MapPath(name2);
+                    var imgPath = "";
 
-                    var path = "C:/Users/Kam.Ndirangu/Source/Repos/Boot Track/Boot_Track/Images/" + name;
+                    var path = "C:/Users/Drew.Taylor/Source/Repos/Boot Track/Boot_Track/Images/" + name;
                     if (File.Exists(path + ".jfif"))
                     {
-                        System.Diagnostics.Debug.WriteLine("1");
-
+                        imgPath = name + ".jfif";
                     }
-                    else if (File.Exists(path + ".jpg") || File.Exists(path + ".JPG"))
+                    else if (File.Exists(path + ".jpg"))
                     {
-                        System.Diagnostics.Debug.WriteLine("2");
+                        imgPath = name + ".jpg";
                     }
-                    else{
-                        System.Diagnostics.Debug.WriteLine(name2);
-                        //System.Diagnostics.Debug.WriteLine(name3);
-                        System.Diagnostics.Debug.WriteLine("3");
+                    else
+                    {
+                        imgPath = "";
                     }
 
 

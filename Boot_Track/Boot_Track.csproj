@@ -168,7 +168,7 @@
     <Content Include="Images\ravind-budhiraja.jfif" />
     <Content Include="Images\ron-jones.jfif" />
     <Content Include="Images\square.svg" />
-    <Content Include="Images\zach-gay.JPG" />
+    <Content Include="Images\zach-gay.jpg" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\bootstrap.js" />
