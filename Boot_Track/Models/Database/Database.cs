@@ -338,6 +338,78 @@ namespace Boot_Track.Models
             };
             _LoginTable.Add(drewSignIn);
 
+            Login davidDSignIn = new Login
+            {
+                Username = "david.davenport",
+                Password = "davidPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(davidDSignIn);
+
+            Login graysonSignIn = new Login
+            {
+                Username = "grayson.harden",
+                Password = "graysonPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(graysonSignIn);
+
+            Login marySignIn = new Login
+            {
+                Username = "mary claire.freese",
+                Password = "maryPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(marySignIn);
+
+            Login kallieSignIn = new Login
+            {
+                Username = "kallie.cothran",
+                Password = "kalliePass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(kallieSignIn);
+
+            Login kerrySignIn = new Login
+            {
+                Username = "kerry.bethea",
+                Password = "kerryPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(kerrySignIn);
+
+            Login belaSignIn = new Login
+            {
+                Username = "bela.colmenares",
+                Password = "belaPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(belaSignIn);
+
+            Login jeremySignIn = new Login
+            {
+                Username = "jeremy.balemala",
+                Password = "jeremyPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(jeremySignIn);
+
+            Login ericSignIn = new Login
+            {
+                Username = "eric.cho",
+                Password = "ericPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(ericSignIn);
+
+            Login davidHSignIn = new Login
+            {
+                Username = "david.hwang",
+                Password = "davidPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(davidHSignIn);
+
             Login adminSignin = new Login {
                 Username = "admin.admin",
                 Password = "admin",
