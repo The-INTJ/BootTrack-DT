@@ -187,7 +187,7 @@ namespace Boot_Track.Models
             mod3.Title = "JavaScript 101";
             mod3.Overview = "JavaScript is probably the most ubiquitous programming language today. It is most widely used on web pages to augment the user experience through animations and small UI tweaks. More and more JavaScript is being used as an application development language as in the case of sing page apps (SPAs) or node.js a server side version of JavaScript. Today it is possible to write your whole application using JavaScript.";
             mod3.SMEs = new[] { "Zach Gay", "Nick Sturdivant", "Ravind Budhiraja", "Michael Buckman" };
-            mod3.Checklist = new[] { "Intro to JavaScript", "Introduction to jQuery", "Add Some Koolnesss to the Fabrikam site", "Typescript" };
+            mod3.Checklist = new[] { "Intro to JavaScript", "Introduction to jQuery", "Add Some Koolnesss", "Typescript" };
             mod3.InstructionLink = "https://teams.microsoft.com/l/channel/19%3Af9d21f79034c4f6690ceed6586e73248%40thread.skype/tab%3A%3A937ecfbd-5b52-4d8c-8856-e5447c0e8f7e?groupId=cbb572f4-6cdd-467d-8a4b-8cef4e6f2b98&tenantId=243bd71d-cef7-442d-b37f-3ff10a3e2832";
             mod3.Rating = new[] { 10, 8, 2 };
             mod3.Comments = new[,]
