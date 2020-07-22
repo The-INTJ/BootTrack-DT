@@ -138,6 +138,18 @@
                 foreach (var camper in camperEntry)
                 {
                     <div class="Dash-Camper">
+                        @{
+                            double doneTasks = 0;
+                            for (int j = 0; j < @Model.CurrModule.Checklist.Length; j++)
+                            {
+                                if (@Model.GetProgress(camper.intern, @Model.CurrModule).checklistState[j] == true)
+                                {
+                                    doneTasks++;
+                                }
+                            }
+                            double percentDone = (int)((doneTasks / @Model.CurrModule.Checklist.Length) * 100);
+                            System.Diagnostics.Debug.WriteLine(percentDone);
+                        }
                         <div class="Camper" style="display: flex;">
                             <svg height="100" width="100">
                                 <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
@@ -147,20 +159,11 @@
                         <div class="Progress-Bar-Nonbootstrap">
                             <h6>In Progress</h6>
                             <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: @(percentDone + "%")" aria-valuenow="@(percentDone)" aria-valuemin="0" aria-valuemax="100">@Html.Raw(percentDone)%</div>
                             </div>
                             <div class="Below-Progress">
-                                <h6>25%</h6>
-                                <h6>Tasks @{
-                                    int doneTasks = 0;
-                                    for(int j = 0; j < @Model.CurrModule.Checklist.Length; j++)
-                                    {
-                                        if(@Model.GetProgress(camper.intern, @Model.CurrModule).checklistState[j] == true)
-                                        {
-                                            doneTasks++;
-                                        }
-                                    }
-                                }
+                                <h6>@Html.Raw(percentDone)%</h6>
+                                <h6>Tasks 
                                 @Html.Raw(doneTasks)/@Model.CurrModule.Checklist.Length</h6>
                             </div>
                         </div>

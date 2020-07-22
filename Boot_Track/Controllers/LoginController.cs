@@ -13,6 +13,8 @@ namespace Boot_Track.Controllers
         public ActionResult Index()
         {
             HttpContext.Response.Cookies.Remove("IsLoggedIn");
+            HttpContext.Response.Cookies.Remove("Username");
+            HttpContext.Response.Cookies.Remove("Password");
 
             return View();
         }
