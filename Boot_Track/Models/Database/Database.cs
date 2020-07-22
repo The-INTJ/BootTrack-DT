@@ -160,7 +160,7 @@ namespace Boot_Track.Models
                     { "Kam" , "YEET"},
                     { "Drew", "VS CODE IS BETTER"},
                 };
-            mod.completionDate = new DateTime(2020, 7, 17);
+            mod.completionDate = new DateTime(2020, 7, 17).Date;
             _modules.Add(mod);
 
             // Second module hardcode
