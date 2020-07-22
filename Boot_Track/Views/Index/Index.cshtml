@@ -126,10 +126,11 @@
                 {
 
                     <tr>
-                        <th scope="row"><a href="@Url.Action("ModulePage", "Modules", new {ModuleTitle = @Model.modules[i].Title})">
+                        <th scope="row" style="padding-right: 100px;"><a href="@Url.Action("ModulePage", "Modules", new {ModuleTitle = @Model.modules[i].Title})">
                             @Model.modules[i].Title
                         </a>
-                        <p class="date-style"><em>ETC: </em>5/20</p>
+                            <p class="date-style"><em>ETC: </em>5/20</p>
+                        </th>
                         @{
                             //@Model.progress[i].Count() should be the number of bootcampers we have
                             //Therefore, j should associate correctly with a single bootcamper 

@@ -24,6 +24,8 @@ namespace Boot_Track.Models
 
         public Module CurrModule = new Module();
 
+        public string AbsolutePath;
+
         public void GetProgress()
         {
             if (!Database.GetProgress().Any())
