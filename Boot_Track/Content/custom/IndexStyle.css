@@ -16,9 +16,8 @@ h2 {
 .Filter-Container {
     display: flex;
     min-height: 55px;
-    margin-bottom: 8px;
+    margin-bottom: 11px;
     flex-direction: row;
-    padding: 10px 10px 0 0;
 }
 
 /*.Head-Search {
@@ -51,6 +50,13 @@ h2 {
 
 #Check-To-Pad {
 
+}
+
+.dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 /* Dropdowns */
@@ -98,6 +104,7 @@ h2 {
 
 td {
     min-width: 200px;
+    vertical-align: inherit;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -135,4 +142,11 @@ thead-additional {
 .hidden-scroll {
 
     overflow-x: auto;
+}
+
+.vert-div {
+    border: 1px solid #222222;
+    border-radius: 5px;
+    min-height: 100%;
+    margin-right: 20%;
 }

@@ -7,7 +7,7 @@
         if ($(this).attr("src") === "/Images/square.svg") {
             $(this).attr("id", "Checked");
             $(this).attr("src", "/Images/check-square.svg");
-        } else {
+        } else if ($(this).attr("src") === "/Images/check-square.svg") {
             $(this).attr("id", "Unchecked");
             $(this).attr("src", "/Images/square.svg");
         }
