@@ -48,9 +48,10 @@ namespace Boot_Track.Models
                     progress.module = _modules[i];
                     progress.progress = 0;
                     progress.checklistState = new List<bool>();
+                    progress.moduleProgress = ""; //initialize to not started
                     //man this code could really do anything idk what this is
                     for (int k = 0; k < _modules[i].Checklist.Length; k++) {    
-                        progress.checklistState.Add(false);
+                        progress.checklistState.Add(false); //initialize all checkboxes to false
                     }
                     sublist.Add(progress);
                 }

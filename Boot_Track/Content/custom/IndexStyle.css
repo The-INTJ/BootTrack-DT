@@ -4,20 +4,21 @@ body {
 
 h2 {
     text-align: center;
-    color: #0c87e1;
+/*    color: #0c87e1;*/
 }
 
 .Container {
     display: block;
-    /*margin-left: 10%;
+/*    margin-left: 10%;
     margin-right: 10%;*/
 }
 
 .Filter-Container {
     display: flex;
+    min-height: 55px;
+    margin-bottom: 8px;
     flex-direction: row;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding: 10px 10px 0 0;
 }
 
 /*.Head-Search {
@@ -25,23 +26,25 @@ h2 {
     margin-right: 40%;
 }*/
 
+
+.search-bar-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 5%;
+}
+
 .Search-Bar {
-   flex:2;
-    max-height: 60px;
-    margin-right: 40%;
+    height: 35px;
 }
 
 .Rows {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
-.Row1 {
-    padding-bottom: 15px;
-}
-
-.Row2 {
-    
+.row-item {
+    margin: 10px;
 }
 
 #Check-To-Pad {
@@ -50,9 +53,24 @@ h2 {
 
 /* Dropdowns */
 .dropbtn {
+    border-radius: 7px;
     width: 75px;
     height: 30px;
 }
+    .dropbtn:hover {
+        outline: none;
+        border-radius: 7px;
+        border-color: #8D0E11;
+        width: 75px;
+        height: 30px;
+    }
+    .dropbtn:focus {
+        outline: none;
+        border-radius: 7px;
+        border-color: #E61717;
+        width: 75px;
+        height: 30px;
+    }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -94,4 +112,12 @@ h2 {
 
 button {
     font-size: 12px;
+}
+
+.date-style {
+    font-size: small;
+}
+
+.spacing {
+    margin: 5px;
 }

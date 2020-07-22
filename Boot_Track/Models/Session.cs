@@ -22,6 +22,8 @@ namespace Boot_Track.Models
 
         public Email email = new Email();
 
+        public Module CurrModule = new Module();
+
         public void GetProgress()
         {
             if (!Database.GetProgress().Any())
@@ -46,6 +48,23 @@ namespace Boot_Track.Models
             {
                 interns = Database.GetInterns();
             }
+        }
+
+        public Intern GetIntern(string username)
+        {
+            GetInterns();
+            string[] names = username.Split(new Char[] { '.' });
+            Intern notFoundIntern = new Intern();
+
+            foreach(var intrn in interns)
+            {
+                if(intrn.FirstName.ToLower() == names[0] && intrn.LastName.ToLower() == names[1])
+                {
+                    return intrn;
+                }
+            }
+
+            return notFoundIntern;
         }
 
         public void GetModules()
@@ -80,7 +99,7 @@ namespace Boot_Track.Models
             Database.SetProgressChecklist(internParam, moduleParam, num, state);
         }
 
-        public bool GetProgressChecklist(Intern internParam, Module moduleParam, int num, bool state)
+        public bool GetProgressChecklist(Intern internParam, Module moduleParam, int num)
         {
             return Database.GetProgressChecklist(internParam, moduleParam, num);
         }

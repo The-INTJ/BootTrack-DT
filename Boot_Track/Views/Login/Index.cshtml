@@ -1,7 +1,7 @@
 ﻿@model Boot_Track.Models.Login
 @{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Login.cshtml";
 }
 
 
@@ -16,7 +16,7 @@
             @Html.TextBoxFor(m => m.Username, new { @id="Username", @class = "un", @type = "text", @align = "center", @placeholder = "Username" })
             <br/>
             <br/>
-            @Html.TextBoxFor(m => m.Password, new { @id="Password", @class = "un", @type = "text", @align = "center", @placeholder = "Password" })
+            @Html.TextBoxFor(m => m.Password, new { @id="Password", @class = "un", @type = "password", @align = "center", @placeholder = "Password" })
             <br/>
             <br/>
             <input class="submit" type="submit" placeholder="Sign In" />

@@ -6,6 +6,23 @@ h1, h2 {
     padding-left:20px;
 }
 
+.Container-M {
+    display: flex;
+    flex-direction: column;
+}
+
+.orient {
+    margin-top: 3.8%;
+    padding: 25px 10px 15px 15px;
+    background: #E8E8E8;
+    border-radius: 10px;
+    /*display: flex;
+    flex-direction: column;
+    background: #E5E5E5;
+    margin: 40px 10% 0 10%;*/
+    /*top right bottom left aka clockwise*/
+}
+
 .Overview-CheckList {
     display: flex;
     flex-direction: row;
@@ -13,25 +30,32 @@ h1, h2 {
 }
 
 .Overview {
-    background: #E5E5E5;
-    width: 60%;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-left: 15px;
+    background: #E8E8E8;
+    width: 64%;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .CheckList {
-    background: #E5E5E5;
-    width: 30%;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-right: 15px;
+    background: #E8E8E8;
+    width: 32%;
+    padding: 15px;
+    border-radius: 10px;
 }
 
-.Overview-P-Bold, .CheckList-P-Bold, .Module-Dashboard-P-Bold, .Module-Rating-P-Bold {
+.inp-chkbx {
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.chkbx-spacing {
+    padding: 0 0 10px 10px;
+}
+
+.P-Bold {
+    margin-left: 2%;
     font-weight: bold;
     font-size: 24px;
-    margin-left: 7%;
     margin-bottom: 0;
     padding-top: 3px;
 }
@@ -52,11 +76,6 @@ h1, h2 {
     padding-left: 80px;
 }
 
-hr {
-    margin-right: 5%;
-    margin-left: 5%;
-}
-
 .Exercises {
     display: inline-block;
     width: 100%;
@@ -74,35 +93,36 @@ hr {
 }
 
 .Card {
-    background: #E5E5E5;
+    background: #E8E8E8;
     margin: 40px 10% 0 10%; /*top right bottom left aka clockwise*/
     padding-bottom: 20px;
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
 .Dash-Headers {
-    background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
-    margin: 25px 10% 12px 10%; /*top right bottom left aka clockwise*/
+    margin: 15px 5% 0 5%; /*top right bottom left aka clockwise*/
     padding: 20px 10px 20px 10px;
 }
 
 .Dash-Camper {
-    background-color: #ffffff;
+    background: radial-gradient( #E5E5E5, white );
+    border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
-    margin: 0 10% 12px 10%; /*top right bottom left aka clockwise*/
+    margin: 0 5% 12px 5%; /*top right bottom left aka clockwise*/
     padding: 20px 10px 20px 10px;
 }
 
 .Progress-Bar-Nonbootstrap {
     padding-top: 20px;
+    position: absolute;
+    left: 40%;
+    width: 20%;
 }
 
 .Below-Progress h6:first-of-type {

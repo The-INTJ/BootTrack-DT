@@ -10,6 +10,8 @@ namespace Boot_Track.Controllers
 {
     public class ModulesController : Controller
     {
+        Session sesh = new Session();
+
         // GET: Modules
         [Route("Modules/ModulePage/{ModuleTitle}")]
         public ActionResult ModulePage(string ModuleTitle)
@@ -18,17 +20,50 @@ namespace Boot_Track.Controllers
             {
                 return Redirect("/Login/Index");
             }
-
-            var sesh = new Session();
+            
             sesh.GetModules();
+            sesh.GetProgress();
             foreach (var module in sesh.modules)
             {
                 if (module.Title == ModuleTitle)
                 {
-                    return View(module);
+                    sesh.CurrModule = module;
+                    return View(sesh);
                 }
             }
-            return View(sesh.modules[0]);
+            return View(sesh);
+        }
+
+        [Route("Modules/ModulePage/{ModuleTitle}/{num}")]
+        public ActionResult ChangeCheckList(string ModuleTitle, string num)
+        {
+            int i = Int32.Parse(num.Substring(0, num.Length-1));
+            Debug.WriteLine(i);
+            Intern intern = new Intern();
+            Module module = new Module();
+
+            sesh.GetInterns();
+            sesh.GetModules();
+            sesh.GetProgress();
+            foreach(var mod in sesh.modules)
+            {
+                if(ModuleTitle == mod.Title)
+                {
+                    module = mod;
+                }
+            }
+
+            foreach (var intrn in sesh.interns)
+            {
+                if (Request.Cookies["Username"].Value == (intrn.FirstName + "." + intrn.LastName).ToLower())
+                {
+                    intern = intrn;
+                }
+            }
+
+            sesh.SetProgressChecklist(intern, module, i, !sesh.GetProgress(intern, module).checklistState[i]);
+
+            return Redirect($"/Modules/ModulePage/{ModuleTitle}");
         }
     }
 }

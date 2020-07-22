@@ -15,5 +15,7 @@ namespace Boot_Track.Models
         public int progress { get; set; }
 
         public List<bool> checklistState { get; set; }
+
+        public string moduleProgress { get; set; }
     }
 }
