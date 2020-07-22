@@ -39,10 +39,25 @@
             <p class="P-Bold">CheckList</p>
             <hr />
             <div class="Exercises">
-                @foreach (var exercise in @Model.CurrModule.Checklist)
-                {
-                    <p>@exercise<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
+                @{
+                    for (int i = 0; i < @Model.CurrModule.Checklist.Length; i++)
+                    {
+                        if (@Model.GetProgressChecklist(@Model.GetIntern(Request.Cookies["Username"].Value), @Model.CurrModule, i))
+                        {
+                            <p>
+                                @Model.CurrModule.Checklist[i]<img class="Exercise-Img" id="Checked" src="~/Images/check-square.svg"
+                                                                   onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i });'" />
+                            </p>
+                    }
+                    else
+                    {
+                        <p>@Model.CurrModule.Checklist[i]<img class="Exercise-Img" id="Checked" src="~/Images/square.svg" 
+                        onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i });'" /></p>
+                    }
+
                 }
+                }
+
                 <p>Ready for Review<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>
             </div>
         </div>
