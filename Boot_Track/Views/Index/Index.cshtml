@@ -126,14 +126,16 @@
                         <td>5/20</td>
                         <td>Both</td>
                         @{
-                            foreach (var moduleProgress in @Model.progress[i])
+                            //@Model.progress[i].Count() should be the number of bootcampers we have
+                            //Therefore, j should associate correctly with a single bootcamper 
+                            for (int j = 0; j < @Model.progress[i].Count(); j++)
                             {
                                 <td>
                                     <div class="dropdown">
-                                        <button onclick="toggleShow(this)" class="dropbtn"></button>
+                                        <button onclick="toggleShow(this)" class="dropbtn">@Model.progress[i][j].moduleProgress</button>
                                         <div id="myDropdown" class="dropdown-content">
                                             <button onclick="changeText(this)" value=""></button>
-                                            <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
+                                            <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "In Progress" });'" value="In Progress">In Progress</button>
                                             <button type="button" onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
                                         </div>
                                     </div>
