@@ -3,6 +3,12 @@
     font-family: 'Ubuntu', sans-serif;
     background: url('../../images/black-ball-point-pen-with-brown-spiral-notebook-733852.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-bar {
+    display: flex;
+    justify-content: center;
 }
 
 .main {
@@ -37,7 +43,7 @@
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.09);
     margin-bottom: 50px;
-    margin-left: 46px;
+    margin-left: 50px;
     text-align: center;
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
@@ -88,11 +94,6 @@ form.form1 {
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
-.forgot {
-    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    color: #E1BEE7;
-    padding-top: 15px;
-}
 
 a {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
@@ -102,4 +103,8 @@ a {
 
 @media (max-width: 600px) {
     .main { border-radius: 0px; }
+}
+
+hr {
+    border: 1px solid #81A7BB;
 }

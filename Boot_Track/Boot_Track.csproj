@@ -160,6 +160,7 @@
     <Content Include="Images\BootTrack-Logo.png" />
     <Content Include="Images\check-square.svg" />
     <Content Include="Images\Grey-Logo.PNG" />
+    <Content Include="Images\oldlogo.png" />
     <Content Include="Images\square.svg" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
@@ -321,6 +322,7 @@
     <Content Include="Views\Intern\InternTable.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Index\AdminIndex.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
