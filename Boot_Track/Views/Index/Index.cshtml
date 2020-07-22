@@ -63,7 +63,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                @using (Html.BeginForm("SendEmail", "Index"))
+                @*@using (Html.BeginForm("SendEmail", "Index"))*@
                 {
                     <input type="submit" class="btn btn-danger" value="Send for Review" @*onclick='window.location.href ="/Modules/ModulePage"'*@ />
                 }
@@ -79,31 +79,34 @@
 
     <div class="Filter-Container">
 
-        <input type="text" class="Search-Bar" placeholder="Filter by Module" /> @* Try to add svg of search icon in placeholder*@
+        <div class="search-bar-cont">
+            <input type="text" class="Search-Bar" placeholder="Filter by Module" /> @* Try to add svg of search icon in placeholder*@
+        </div>
 
         <div class="Rows">
-            <div class="Row1">
+            <div class="row-item">
                 <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" />
                 <span>Hide Modules with 100% Completion</span>
+            </div>
+            <div class="row-item">
                 <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" />
                 <span>Show Only My Module Status</span>
             </div>
-            <div class="Row2">
+            <div class="row-item">
                 <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" />
                 <span>BC Modules Only</span>
-                <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" style="padding-left: 140px;" />
+            </div>
+            <div class="row-item">
+                <img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" />
                 <span>TC Modules Only</span>
             </div>
         </div>
     </div>
 
-
-
     <table class="table">
         <thead class="thead-light">
             <tr>
                 <th scope="col">Module #</th>
-                <th scope="col">Est. Target<br />Completion</th>
                 <th scope="col">Type</th>
 
                 @{
@@ -120,34 +123,34 @@
         </thead>
         <tbody>
             @{
-                for (int i = 0; i<@Model.modules.Count(); i++)
+                for (int i = 0; i < @Model.modules.Count(); i++)
                 {
 
                     <tr>
-                        <th scope="row"><a href="@Url.Action("ModulePage", "Modules", new { ModuleTitle = @Model.modules[i].Title })">@Model.modules[i].Title</a></th>
-                        <td>5/20</td>
-                        <td>Both</td>
+                        <th scope="row">
+                        <a href="@Url.Action("ModulePage", "Modules", new {ModuleTitle = @Model.modules[i].Title})">
+                            @Model.modules[i].Title
+                        </a>
+                        <p class="date-style"><em>ETC: </em>5/20</p>
                         @{
-                            foreach (var moduleProgress in @Model.progress[i])
+                            //@Model.progress[i].Count() should be the number of bootcampers we have
+                            //Therefore, j should associate correctly with a single bootcamper 
+                            for (int j = 0; j < @Model.progress[i].Count(); j++)
                             {
-                                
-
-                                    <td>
-                                        
-                                        <div class="dropdown">
-                                            <button onclick="toggleShow(this)" class="dropbtn"></button>
-                                            <div id="myDropdown" class="dropdown-content">
-                                                <button onclick="changeText(this)" value=""></button>
-                                                <button onclick="changeText(this)" href="" value="In Progress">In Progress</button>
-                                                <button type="button" onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                            </div>
+                                <td>
+                                    <div class="dropdown">
+                                        <button onclick="toggleShow(this)" class="dropbtn">@Model.progress[i][j].moduleProgress</button>
+                                        <div id="myDropdown" class="dropdown-content">
+                                            <button onclick="changeText(this)" value=""></button>
+                                            <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "In Progress" });'" value="In Progress">In Progress</button>
+                                            <button type="button" onclick="changeText(this)" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
                                         </div>
-                                    </td>
-                                
+                                    </div>
+                                </td>
                             }
                         }
 
-                    </tr>
+                        </tr>
 
                 }
             }
