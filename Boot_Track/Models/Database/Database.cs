@@ -410,6 +410,30 @@ namespace Boot_Track.Models
             };
             _LoginTable.Add(davidHSignIn);
 
+            Login alexSignIn = new Login
+            {
+                Username = "alex.karadsheh",
+                Password = "alexPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(alexSignIn);
+
+            Login kamSignIn = new Login
+            {
+                Username = "kam.ndirangu",
+                Password = "kamPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(kamSignIn);
+
+            Login rebekahSignIn = new Login
+            {
+                Username = "rebekah.williamson",
+                Password = "rebekahPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(rebekahSignIn);
+
             Login adminSignin = new Login {
                 Username = "admin.admin",
                 Password = "admin",
