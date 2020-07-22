@@ -76,6 +76,14 @@ h1, h2 {
     padding-left: 80px;
 }
 
+.sme-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #010101;
+}
+
 .Exercises {
     display: inline-block;
     width: 100%;
