@@ -102,63 +102,68 @@
             </div>
         </div>
     </div>
+    
+    <div class="hidden-scroll">
 
-    <table class="table">
+        <table class="table">
         <thead class="thead-light">
-            <tr>
-                <th scope="col">Module #</th>
+        <tr>
+            <th scope="col">Module #</th>
 
-                @{
-                    foreach (var intern in @Model.interns)
-                    {
-                        <th scope="col">
-                            @intern.FirstName
-                        </th>
-                    }
+            @{
+                foreach (var intern in @Model.interns)
+                {
+                    <th scope="col">
+                        @intern.FirstName
+                    </th>
                 }
+            }
 
-            </tr>
+        </tr>
 
         </thead>
         <tbody>
-            @{
-                for (int i = 0; i < @Model.modules.Count(); i++)
-                {
+        @{
+            for (int i = 0; i < @Model.modules.Count(); i++)
+            {
 
-                    <tr>
-                        <th scope="row" style="padding-right: 100px;"><a href="@Url.Action("ModulePage", "Modules", new {ModuleTitle = @Model.modules[i].Title})">
+                <tr>
+                    <th scope="row" style="padding-right: 100px;"><a href="@Url.Action("ModulePage", "Modules", new {ModuleTitle = @Model.modules[i].Title})">
                             @Model.modules[i].Title
                         </a>
-                            <p class="date-style"><em>ETC: </em>5/20</p>
-                        </th>
-                        @{
-                            //@Model.progress[i].Count() should be the number of bootcampers we have
-                            //Therefore, j should associate correctly with a single bootcamper 
-                            for (int j = 0; j < @Model.progress[i].Count(); j++)
-                            {
-                                <td>
-                                    <div class="dropdown">
-                                        <button onclick="toggleShow(this)" class="dropbtn">@Model.progress[i][j].moduleProgress</button>
-                                        <div id="myDropdown" class="dropdown-content">
-                                            <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "" })'" value=""></button>
-                                            <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "In Progress" })'" value="In Progress">In Progress</button>
-                                            <button type="button" onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "Under Review" })'" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
-                                            <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "Completed" })'" value="Completed">Completed</button>
-                                        </div>
+                        <p class="date-style"><em>ETC: </em>5/20</p>
+                    </th>
+                    @{
+                        //@Model.progress[i].Count() should be the number of bootcampers we have
+                        //Therefore, j should associate correctly with a single bootcamper 
+                        for (int j = 0; j < @Model.progress[i].Count(); j++)
+                        {
+                            <td>
+                                <div class="dropdown">
+                                    <button onclick="toggleShow(this)" class="dropbtn">@Model.progress[i][j].moduleProgress</button>
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "" })'" value=""></button>
+                                        <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "In Progress" })'" value="In Progress">In Progress</button>
+                                        <button type="button" onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "Under Review" })'" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
+                                        <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "Completed" })'" value="Completed">Completed</button>
                                     </div>
-                                </td>
-                            }
+                                </div>
+                            </td>
                         }
+                    }
 
-                        </tr>
+                </tr>
 
-                }
             }
+        }
 
 
         </tbody>
     </table>
-</div>
+    
+    </div>
+
+    </div>
 
 <script>
     $(document).ready(function () {

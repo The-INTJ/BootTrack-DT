@@ -131,3 +131,8 @@ button {
 thead-additional {
     border-radius: 15px 0;
 }
+
+.hidden-scroll {
+
+    overflow-x: auto;
+}
