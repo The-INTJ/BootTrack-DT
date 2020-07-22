@@ -143,6 +143,7 @@
                                             <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "" })'" value=""></button>
                                             <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "In Progress" })'" value="In Progress">In Progress</button>
                                             <button type="button" onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "Under Review" })'" href="" value="Submit for Review" data-toggle="modal" data-target="#myModal">Submit for Review</button>
+                                            <button onclick="changeText(this); location.href='@Url.Action("ChangeModuleProgress", "Index", new { numModule = i, numIntern = j, changeProgressStr = "Completed" })'" value="Completed">Completed</button>
                                         </div>
                                     </div>
                                 </td>
@@ -164,6 +165,6 @@
         $(".dropbtn:contains('In Progress')").css("background", "#F0E8A0");
         $(".dropbtn:contains('Under Review')").css("background", "#FFA7A7");
         $(".dropbtn:contains('Under Review')").css("font-size", "9px");
-        $(".dropbtn:contains('Approve')").css("background", "#99EAB9");
+        $(".dropbtn:contains('Completed')").css("background", "#99EAB9");
     });
 </script>
