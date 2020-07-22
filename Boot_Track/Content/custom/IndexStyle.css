@@ -127,3 +127,7 @@ button {
 .spacing {
     margin: 5px;
 }
+
+thead-additional {
+    border-radius: 15px 0;
+}
