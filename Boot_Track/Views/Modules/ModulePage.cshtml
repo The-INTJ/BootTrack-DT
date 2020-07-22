@@ -1,5 +1,6 @@
 ﻿@using Boot_Track.Models
 @model Boot_Track.Models.Module
+
 @{
     ViewBag.Title = "ModulePage";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,11 +26,43 @@
             <div class="Module-SMEs">
                 @* Generate as many as we get from list; Rn Hardcoded *@
                 @foreach(var sme in @Model.SMEs) {
+                    var name = sme;
+                    name = name.ToLower();
+                    name = name.Replace(' ', '-');
+                    var name2 = @"~/Images/" + name  + ".jfif";
+                    //var name3 = "<a href="~/ Images / michael - buckman.jfif">~/Images/michael-buckman.jfif</a>";
+                    //DirectoryInfo path = Server.MapPath(@"~\Chat\img");
+
+                    //var name4 = Server.MapPath(name2);
+
+                    var path = "C:/Users/Kam.Ndirangu/Source/Repos/Boot Track/Boot_Track/Images/" + name;
+                    if (File.Exists(path + ".jfif"))
+                    {
+                        System.Diagnostics.Debug.WriteLine("1");
+
+                    }
+                    else if (File.Exists(path + ".jpg") || File.Exists(path + ".JPG"))
+                    {
+                        System.Diagnostics.Debug.WriteLine("2");
+                    }
+                    else{
+                        System.Diagnostics.Debug.WriteLine(name2);
+                        //System.Diagnostics.Debug.WriteLine(name3);
+                        System.Diagnostics.Debug.WriteLine("3");
+                    }
+
+
+
                 <div class="SME">
                     <svg height="100" width="100">
                         <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="grey" />
+                        
                     </svg>
+                    
                     <p>@sme</p>
+                    
+                    
+                    
                 </div>
                 }
             </div>
