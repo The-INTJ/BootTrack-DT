@@ -40,9 +40,21 @@
             <div class="Exercises">
                 @{
                     for (int i = 0; i < @Model.CurrModule.Checklist.Length; i++)
-                    {                  
-                        <p>@Model.CurrModule.Checklist[i]<img class="Exercise-Img" id="Checked" src="~/Images/check-square.svg" onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i });'"/></p>
+                    {
+                        if (@Model.GetProgressChecklist(@Model.GetIntern(Request.Cookies["Username"].Value), @Model.CurrModule, i))
+                        {
+                            <p>
+                                @Model.CurrModule.Checklist[i]<img class="Exercise-Img" id="Checked" src="~/Images/check-square.svg"
+                                                                   onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i });'" />
+                            </p>
                     }
+                    else
+                    {
+                        <p>@Model.CurrModule.Checklist[i]<img class="Exercise-Img" id="Checked" src="~/Images/square.svg" 
+                        onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i });'" /></p>
+                    }
+
+                }
                 }
 
                 <p>Ready for Review<img class="Exercise-Img" id="Unchecked" src="~/Images/square.svg" /></p>

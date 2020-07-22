@@ -11,8 +11,9 @@ namespace Boot_Track.Controllers
 {
     public class IndexController : Controller
     {
-        // GET: Index
+        Session sesh = new Session();
 
+        // GET: Index
         // Logic for parsing session object, null check (return error if failed), return view with session object
         public ActionResult Index()
         {
@@ -21,12 +22,29 @@ namespace Boot_Track.Controllers
                 return Redirect("/Login/Index");
             }
 
-            var sesh = new Session();
             sesh.GetModules();
             sesh.GetInterns();
             sesh.GetProgress();
 
             return View(sesh);
+        }
+
+        public ActionResult ChangeModuleProgress(string numModule, string numIntern, string changeProgressStr)
+        {
+            Debug.WriteLine($"numModule: {numModule}; numIntern: {numIntern}");
+            int numMod = Int32.Parse(numModule);
+            int numInt = Int32.Parse(numIntern);
+            changeProgressStr = changeProgressStr.Substring(0, changeProgressStr.Length - 1);
+            Debug.WriteLine($"numModule: {numMod}; numIntern: {numInt}");
+
+
+            sesh.GetModules();
+            sesh.GetInterns();
+            sesh.GetProgress();
+
+            sesh.progress[numMod][numInt].moduleProgress = changeProgressStr;
+
+            return View("Index", sesh);
         }
 
         public ActionResult AdminIndex()
@@ -63,11 +81,7 @@ namespace Boot_Track.Controllers
                     SubjectEncoding = System.Text.Encoding.UTF8,
 
                 };
-                //var toAddresses = recipients.Split(',');
-                //foreach (var to in toAddresses)
-                //{
-                //    message.To.Add(to.Trim());
-                //}
+                
                 message.To.Add("henry.faulkner@perficient.com");
 
                 try

@@ -40,6 +40,18 @@ namespace Boot_Track.Controllers
             int i = Int32.Parse(num.Substring(0, num.Length-1));
             Debug.WriteLine(i);
             Intern intern = new Intern();
+            Module module = new Module();
+
+            sesh.GetInterns();
+            sesh.GetModules();
+            sesh.GetProgress();
+            foreach(var mod in sesh.modules)
+            {
+                if(ModuleTitle == mod.Title)
+                {
+                    module = mod;
+                }
+            }
 
             foreach (var intrn in sesh.interns)
             {
@@ -49,7 +61,7 @@ namespace Boot_Track.Controllers
                 }
             }
 
-            sesh.SetProgressChecklist(intern, sesh.CurrModule, i, sesh.GetProgress(intern, sesh.CurrModule).checklistState[i]);
+            sesh.SetProgressChecklist(intern, module, i, !sesh.GetProgress(intern, module).checklistState[i]);
 
             return Redirect($"/Modules/ModulePage/{ModuleTitle}");
         }
