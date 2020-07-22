@@ -46,13 +46,13 @@
                         {
                             <p>
                                 @Model.CurrModule.Checklist[i]<img class="Exercise-Img" id="Checked" src="~/Images/check-square.svg"
-                                                                   onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i });'" />
+                                                                   onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i })'" />
                             </p>
                     }
                     else
                     {
                         <p>@Model.CurrModule.Checklist[i]<img class="Exercise-Img" id="Checked" src="~/Images/square.svg" 
-                        onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i });'" /></p>
+                        onclick="location.href='@Url.Action("ChangeCheckList", "Modules", new { ModuleTitle = @Model.CurrModule.Title, num = i })'" /></p>
                     }
 
                 }
@@ -107,7 +107,17 @@
                             </div>
                             <div class="Below-Progress">
                                 <h6>25%</h6>
-                                <h6>Tasks 1/4</h6>
+                                <h6>Tasks @{
+                                    int doneTasks = 0;
+                                    for(int j = 0; j < @Model.CurrModule.Checklist.Length; j++)
+                                    {
+                                        if(@Model.GetProgress(camper.intern, @Model.CurrModule).checklistState[j] == true)
+                                        {
+                                            doneTasks++;
+                                        }
+                                    }
+                                }
+                                @Html.Raw(doneTasks)/@Model.CurrModule.Checklist.Length</h6>
                             </div>
                         </div>
                         <h5 style="padding-top: 35px;">@Model.CurrModule.completionDate</h5>

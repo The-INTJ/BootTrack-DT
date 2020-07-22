@@ -222,11 +222,19 @@ namespace Boot_Track.Models
             };
             _LoginTable.Add(henrySignIn);
 
+            Login drewSignIn = new Login
+            {
+                Username = "drew.taylor",
+                Password = "drewPass",
+                IsAdmin = false
+            };
+            _LoginTable.Add(drewSignIn);
+
             Login adminSignin = new Login {
                 Username = "admin.admin",
                 Password = "admin",
                 IsAdmin = true
-            };       
+            };   
         }
 
         public static List<Models.Login> GetLogins()
