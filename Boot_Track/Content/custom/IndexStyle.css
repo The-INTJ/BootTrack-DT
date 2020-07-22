@@ -38,6 +38,7 @@ h2 {
 }
 
 .Rows {
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -140,7 +141,7 @@ thead-additional {
 }
 
 .hidden-scroll {
-
+    border-radius: 15px;
     overflow-x: auto;
 }
 
