@@ -34,7 +34,7 @@ namespace Boot_Track.Controllers
             Debug.WriteLine($"numModule: {numModule}; numIntern: {numIntern}");
             int numMod = Int32.Parse(numModule);
             int numInt = Int32.Parse(numIntern);
-            changeProgressStr = changeProgressStr.Substring(0, changeProgressStr.Length - 1);
+           
             Debug.WriteLine($"numModule: {numMod}; numIntern: {numInt}");
 
 

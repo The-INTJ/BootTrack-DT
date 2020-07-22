@@ -37,7 +37,7 @@ namespace Boot_Track.Controllers
         [Route("Modules/ModulePage/{ModuleTitle}/{num}")]
         public ActionResult ChangeCheckList(string ModuleTitle, string num)
         {
-            int i = Int32.Parse(num.Substring(0, num.Length-1));
+            int i = Int32.Parse(num);
             Debug.WriteLine(i);
             Intern intern = new Intern();
             Module module = new Module();
